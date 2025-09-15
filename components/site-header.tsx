@@ -20,9 +20,11 @@ export function SiteHeader({ children, actions, left }: SiteHeaderProps) {
           {left ?? (!children ? <h1 className="text-base font-medium">Dashboard</h1> : null)}
         </div>
 
-        {/* Center: children (centered) */}
-        <div className="flex justify-center">
-          {children}
+        {/* Center: children (absolutely centered) */}
+        <div className="relative">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            {children}
+          </div>
         </div>
 
         {/* Right: actions (or GitHub fallback) */}
