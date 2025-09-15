@@ -6,22 +6,27 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 interface SiteHeaderProps {
   children?: React.ReactNode
   actions?: React.ReactNode
+  left?: React.ReactNode
 }
 
-export function SiteHeader({ children, actions }: SiteHeaderProps) {
+export function SiteHeader({ children, actions, left }: SiteHeaderProps) {
   return (
     <header className="flex h-(--header-height) shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height)">
-      <div className="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
-        <SidebarTrigger className="-ml-1" />
-        <Separator
-          orientation="vertical"
-          className="mx-2 data-[orientation=vertical]:h-4"
-        />
+      <div className="grid w-full grid-cols-[auto_1fr_auto] items-center px-4 lg:px-6 gap-2">
+        {/* Left: sidebar trigger + separator + optional left content or title */}
+        <div className="flex items-center gap-1">
+          <SidebarTrigger className="-ml-1" />
+          <Separator orientation="vertical" className="mx-2 data-[orientation=vertical]:h-4" />
+          {left ?? (!children ? <h1 className="text-base font-medium">Dashboard</h1> : null)}
+        </div>
 
-        {/* Render children (tabs or title) */}
-        {children || <h1 className="text-base font-medium">Dashboard</h1>}
+        {/* Center: children (centered) */}
+        <div className="flex justify-center">
+          {children}
+        </div>
 
-        <div className="ml-auto flex items-center gap-2">
+        {/* Right: actions (or GitHub fallback) */}
+        <div className="flex items-center justify-end gap-2">
           {actions ? (
             actions
           ) : (

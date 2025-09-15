@@ -20,19 +20,19 @@ export default function Page() {
       <AppSidebar variant="inset" />
       <SidebarInset>
         <SiteHeader
+          left={<div className="text-base font-medium">Name Of Agent</div>}
           actions={
-            <Button variant="secondary" size="sm">
+            <Button size="sm">
               Publish
             </Button>
           }
         >
           <div className="flex-1 flex justify-center">
-            <Tabs defaultValue="overview" className="w-auto">
-              <TabsList className="grid w-full grid-cols-4">
-                <TabsTrigger value="overview">Overview</TabsTrigger>
-                <TabsTrigger value="agents">Agents</TabsTrigger>
-                <TabsTrigger value="analytics">Analytics</TabsTrigger>
-                <TabsTrigger value="settings">Settings</TabsTrigger>
+            <Tabs defaultValue="agent" className="w-auto">
+              <TabsList className="grid w-full grid-cols-3">
+                <TabsTrigger value="agent">Agent</TabsTrigger>
+                <TabsTrigger value="customization">Customization</TabsTrigger>
+                <TabsTrigger value="results">Results</TabsTrigger>
               </TabsList>
             </Tabs>
           </div>
