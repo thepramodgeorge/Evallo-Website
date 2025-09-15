@@ -3,7 +3,7 @@
 import * as React from "react"
 import { IconCirclePlusFilled, type Icon } from "@tabler/icons-react"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
+import { useRouter, usePathname } from "next/navigation"
 
 import {
   SidebarGroup,
@@ -32,10 +32,14 @@ export function NavMain({
   }[]
 }) {
   const router = useRouter()
+  const pathname = usePathname()
   const [loadingRoute, setLoadingRoute] = React.useState<string | null>(null)
 
   // Start loading state when a link is clicked (client-side nav)
   function handleNavigate(url: string) {
+    // Don't show loading if the user clicked the current page (or a parent path)
+    if (!url || url === "#") return
+    if (pathname && (pathname === url || pathname.startsWith(url))) return
     setLoadingRoute(url)
   }
 
