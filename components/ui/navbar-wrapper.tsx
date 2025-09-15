@@ -12,8 +12,9 @@ import {
 export default function NavbarWrapper() {
   const pathname = usePathname() || "/"
 
-  // Hide the navbar for dashboard routes
-  if (pathname.startsWith("/dashboard")) return null
+  // Hide the navbar for app routes (logged-in pages)
+  const appRoutes = ["/dashboard", "/agent", "/login"]
+  if (appRoutes.some(route => pathname.startsWith(route))) return null
 
   return (
     <Navbar>
