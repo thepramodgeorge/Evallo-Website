@@ -1,10 +1,10 @@
 # Login feature - design & implementation notes
 
-Last updated: 2025-09-16
+Last updated: 2025-09-16 (OAuth account selection fix added)
 
 Summary
 -------
-This document captures the implementation details and reasoning for converting the app's login flow to Google-only authentication using Supabase, adding logout handling, and wiring the sidebar user card to show the Google profile photo, name and email.
+This document captures the implementation details and reasoning for converting the app's login flow to Google-only authentication using Supabase, adding logout handling, wiring the sidebar user card to show the Google profile photo, name and email, and fixing OAuth account selection behavior after logout.
 
 Goals
 -----
@@ -12,10 +12,11 @@ Goals
 - Ensure users are redirected to `/dashboard` after successful sign-in.
 - Provide a working logout in the header and sidebar user menu that clears client session and redirects to landing page.
 - Show the logged-in user's name, email and Google profile photo in the sidebar user card.
+- Fix OAuth account selection to show account picker after logout instead of auto-signing in with previous account.
 
 Files changed
 -------------
-- `components/login-form.tsx` — replaced the email/password form with a Google-only "Sign in with Google" button that calls `supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo } })`. Added client-side session listener and redirect to `/dashboard` on sign-in.
+- `components/login-form.tsx` — replaced the email/password form with a Google-only "Sign in with Google" button that calls `supabase.auth.signInWithOAuth({ provider: 'google', options: { redirectTo, queryParams: { prompt: 'select_account' } } })`. Added client-side session listener and redirect to `/dashboard` on sign-in. Updated to force account selection after logout.
 - `components/site-header.tsx` — converted to Client Component; added `handleLogout` calling `supabase.auth.signOut()` and `router.push('/')`; added Logout button in header.
 - `components/nav-user.tsx` — wired the dropdown "Log out" menu item to call `supabase.auth.signOut()` and redirect to `/` (via `next/navigation`). Introduced local state `localUser` and added logic to fetch the Supabase session/user and subscribe to auth state changes to update the displayed name/email/avatar.
 - `components/app-sidebar.tsx` — replaced static placeholder user with client-side logic that calls `supabase.auth.getSession()` / `supabase.auth.getUser()` and subscribes to `onAuthStateChange` to update the sidebar user. Extracts name/email/avatar from `user.user_metadata` and `user.identities[0].identity_data`.
@@ -24,6 +25,7 @@ Files changed
 Implementation notes
 --------------------
 - OAuth redirect: `signInWithOAuth` is called from the client with `options.redirectTo` pointing at `${window.location.origin}/dashboard`. That ensures the provider redirects back to the app after authentication. Note: the redirect URL must be whitelisted in the Supabase project's Redirect URLs.
+- OAuth account selection: Added `queryParams: { prompt: 'select_account' }` to force Google to show the account selection screen after logout, preventing automatic sign-in with the previously used account.
 - Client-side guard: The login form and app subscribe to `supabase.auth.onAuthStateChange`. When the `SIGNED_IN` event occurs or `supabase.auth.getSession()` returns a session, the app navigates to `/dashboard` using `router.push('/dashboard')`.
 - Logout: `supabase.auth.signOut()` clears local session and triggers a `SIGNED_OUT` event. After sign-out the app navigates to `/`.
 - Fetching Google profile photo: Supabase stores provider data in `user.user_metadata` and sometimes in `user.identities[0].identity_data` for OAuth providers. The code now prefers `identities[0].identity_data.picture` or `avatar_url` and falls back to `user_metadata.picture`.
@@ -35,6 +37,7 @@ Edge cases handled
 - Provider returns no picture: fallback to a placeholder avatar path (`/avatars/shadcn.jpg`) and initials are shown by `AvatarFallback`.
 - User already signed in: the sidebar and login screen check for an existing session and redirect to `/dashboard` immediately.
 - Sign-in or sign-out errors: code logs the error and shows a simple `alert` (login flow) or console error (logout); can be improved to show inline UI messages.
+- OAuth session persistence: After logout, Google OAuth was automatically using the previous account. Fixed by adding `prompt: 'select_account'` to force account selection screen.
 
 Testing & validation
 ---------------------
@@ -50,10 +53,12 @@ npm run dev
 3. Open `http://localhost:3000/login` and click "Sign in with Google".
 4. Complete the OAuth flow and allow the app access. The user should be redirected to `/dashboard` and the sidebar user card should display your Google name, email and profile photo.
 5. Click the Logout button in the header or the sidebar user menu to sign out — you should be redirected to `/`.
+6. **OAuth Account Selection Test**: Click "Sign in with Google" again. You should now see Google's account selection screen where you can choose which Google account to use or add a new account, instead of automatically signing in with the previous account.
 
 Debugging tips
 --------------
 - If the avatar doesn't update, open DevTools → Network and inspect the avatar URL. It should include `cb=<timestamp>` if it was external.
+- If account selection doesn't appear after logout, check that the `signInWithOAuth` call includes `queryParams: { prompt: 'select_account' }` in the options.
 - Call `supabase.auth.getUser()` from the browser console to inspect the returned user object and confirm where the profile picture is stored:
 
 ```js
@@ -69,6 +74,7 @@ Next steps / improvements
 - Add a loading skeleton for the avatar and sidebar while session/user data is fetched.
 - Consider server-side session retrieval and rendering the sidebar on the server for faster first paint.
 - Add unit/integration tests for the login flow using a mocked Supabase client.
+- Consider making the account selection behavior configurable (e.g., allow users to choose between always showing account picker vs. seamless re-authentication).
 
 Files to review for this feature
 --------------------------------

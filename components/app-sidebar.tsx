@@ -158,25 +158,59 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   useEffect(() => {
     const supabase = getSupabaseClient()
 
-    const getProfileFrom = (u: any) => {
-      const metadata: any = u?.user_metadata || {}
+    type SupabaseUserMinimal = {
+      raw_user_meta_data?: Record<string, unknown>
+      user_metadata?: Record<string, unknown>
+      identities?: Array<{ identity_data?: Record<string, unknown> }>
+      email?: string
+    }
+
+    const getProfileFrom = (u?: SupabaseUserMinimal | null) => {
+      // If auth.raw_user_meta_data exists, use only its fields to populate the user card
+      const raw = u?.raw_user_meta_data
+      if (raw && Object.keys(raw).length > 0) {
+        // Strict: use only raw_user_meta_data fields — no fallbacks
+        const name = (raw["name"] as string | undefined) ?? (raw["full_name"] as string | undefined) ?? ""
+        const email = (raw["email"] as string | undefined) ?? ""
+        let avatar = (raw["avatar_url"] as string | undefined) ?? (raw["picture"] as string | undefined) ?? ""
+
+        // cache-bust external avatars
+        if (typeof avatar === "string" && avatar.startsWith("http")) {
+          try {
+            const url = new URL(avatar)
+            url.searchParams.set("cb", String(Date.now()))
+            avatar = url.toString()
+          } catch (e) {
+            // ignore invalid URL
+          }
+        }
+
+        return { name, email, avatar }
+      }
+
+      // fallback to previous logic when raw_user_meta_data is not available
+      const metadata = u?.user_metadata ?? {}
+      const identityData = u?.identities?.[0]?.identity_data ?? {}
       const identityAvatar =
-        u?.identities?.[0]?.identity_data?.avatar_url ||
-        u?.identities?.[0]?.identity_data?.picture
+        (identityData["avatar_url"] as string | undefined) ||
+        (identityData["picture"] as string | undefined)
+
       const name =
-        metadata.name ||
-        metadata.full_name ||
-        metadata.given_name ||
-        metadata.preferred_username ||
+        (metadata["name"] as string | undefined) ||
+        (metadata["full_name"] as string | undefined) ||
+        (metadata["given_name"] as string | undefined) ||
+        (metadata["preferred_username"] as string | undefined) ||
         u?.email ||
         data.user.name
+
       const email = u?.email || data.user.email
+
       let avatar =
         identityAvatar ||
-        metadata.picture ||
-        metadata.avatar_url ||
-        metadata.picture_url ||
-        metadata.photo ||
+        (metadata["picture"] as string | undefined) ||
+        (metadata["avatar_url"] as string | undefined) ||
+        (metadata["picture_url"] as string | undefined) ||
+        (metadata["photo"] as string | undefined) ||
         data.user.avatar
 
       // Add a cache-buster for external avatars so updates show immediately
@@ -200,7 +234,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         if (session?.user) {
           const u = session.user
           const profile = getProfileFrom(u)
-          // console.debug('sidebar session user', u, profile)
+          // Debug: log profile selected for sidebar
+          // eslint-disable-next-line no-console
+          console.debug('sidebar session user profile:', profile)
           setUser(profile)
           return
         }
@@ -210,7 +246,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         const u2 = userData?.user
         if (u2) {
           const profile = getProfileFrom(u2)
-          // console.debug('sidebar getUser', u2, profile)
+            // Debug: log profile selected for sidebar
+            // eslint-disable-next-line no-console
+            console.debug('sidebar getUser profile:', profile)
           setUser(profile)
         }
       } catch (err) {
