@@ -23,6 +23,8 @@ import { NavDocuments } from "@/components/nav-documents"
 import { NavMain } from "@/components/nav-main"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
+import { useEffect, useState } from "react"
+import getSupabaseClient from "@/lib/supabaseClient"
 import {
   Sidebar,
   SidebarContent,
@@ -151,6 +153,89 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const [user, setUser] = useState(data.user)
+
+  useEffect(() => {
+    const supabase = getSupabaseClient()
+
+    const getProfileFrom = (u: any) => {
+      const metadata: any = u?.user_metadata || {}
+      const identityAvatar =
+        u?.identities?.[0]?.identity_data?.avatar_url ||
+        u?.identities?.[0]?.identity_data?.picture
+      const name =
+        metadata.name ||
+        metadata.full_name ||
+        metadata.given_name ||
+        metadata.preferred_username ||
+        u?.email ||
+        data.user.name
+      const email = u?.email || data.user.email
+      let avatar =
+        identityAvatar ||
+        metadata.picture ||
+        metadata.avatar_url ||
+        metadata.picture_url ||
+        metadata.photo ||
+        data.user.avatar
+
+      // Add a cache-buster for external avatars so updates show immediately
+      if (typeof avatar === "string" && avatar.startsWith("http")) {
+        try {
+          const url = new URL(avatar)
+          url.searchParams.set("cb", String(Date.now()))
+          avatar = url.toString()
+        } catch (e) {
+          // ignore invalid URL
+        }
+      }
+
+      return { name, email, avatar }
+    }
+
+    const setFromSession = async () => {
+      try {
+        const { data: sessionData } = await supabase.auth.getSession()
+        const session = sessionData?.session
+        if (session?.user) {
+          const u = session.user
+          const profile = getProfileFrom(u)
+          // console.debug('sidebar session user', u, profile)
+          setUser(profile)
+          return
+        }
+
+        // fallback: try getUser()
+        const { data: userData } = await supabase.auth.getUser()
+        const u2 = userData?.user
+        if (u2) {
+          const profile = getProfileFrom(u2)
+          // console.debug('sidebar getUser', u2, profile)
+          setUser(profile)
+        }
+      } catch (err) {
+        // eslint-disable-next-line no-console
+        console.error('Error fetching session/user for sidebar:', err)
+      }
+    }
+
+    setFromSession()
+
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session?.user) {
+        const u = session.user
+        const profile = getProfileFrom(u)
+        setUser(profile)
+      } else {
+        // signed out
+        setUser(data.user)
+      }
+    })
+
+    return () => {
+      listener?.subscription.unsubscribe()
+    }
+  }, [])
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -174,7 +259,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={user} />
       </SidebarFooter>
     </Sidebar>
   )
