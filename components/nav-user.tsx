@@ -28,6 +28,8 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import { useRouter } from "next/navigation"
+import getSupabaseClient from "@/lib/supabaseClient"
 
 export function NavUser({
   user,
@@ -39,6 +41,20 @@ export function NavUser({
   }
 }) {
   const { isMobile } = useSidebar()
+  const router = useRouter()
+
+  const handleLogout = async () => {
+    try {
+      const supabase = getSupabaseClient()
+      const { error } = await supabase.auth.signOut()
+      if (error) throw error
+      router.push("/")
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error("Logout error:", err)
+      router.push("/")
+    }
+  }
 
   return (
     <SidebarMenu>
@@ -99,9 +115,11 @@ export function NavUser({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <IconLogout />
-              Log out
+            <DropdownMenuItem onSelect={handleLogout} asChild>
+              <button className="w-full text-left">
+                <IconLogout />
+                Log out
+              </button>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

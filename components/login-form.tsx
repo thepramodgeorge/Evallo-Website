@@ -1,5 +1,10 @@
+"use client"
+
+import { useEffect } from "react"
+import { useRouter } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import getSupabaseClient from "@/lib/supabaseClient"
 import {
   Card,
   CardContent,
@@ -7,62 +12,64 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+// removed unused imports (Input, Label) — login is Google-only
 
 export function LoginForm({
   className,
   ...props
 }: React.ComponentProps<"div">) {
+  const handleGoogleSignIn = async () => {
+    try {
+      const supabase = getSupabaseClient()
+      const redirectTo = `${window.location.origin}/dashboard`
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: "google",
+        options: { redirectTo },
+      })
+      if (error) throw error
+    } catch (err) {
+      // eslint-disable-next-line no-console
+      console.error("Google sign-in error:", err)
+      alert("Failed to sign in with Google. Check console for details.")
+    }
+  }
+
+  const router = useRouter()
+
+  useEffect(() => {
+    const supabase = getSupabaseClient()
+
+    // If there is already a session, redirect to dashboard
+    supabase.auth.getSession().then(({ data }) => {
+      if (data?.session) router.push("/dashboard")
+    })
+
+    // Subscribe to auth state changes and redirect on sign in
+    const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
+      if (event === "SIGNED_IN" && session) {
+        router.push("/dashboard")
+      }
+    })
+
+    return () => {
+      // clean up subscription
+      listener?.subscription.unsubscribe()
+    }
+  }, [router])
+
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle>Login to your account</CardTitle>
-          <CardDescription>
-            Enter your email below to login to your account
-          </CardDescription>
+          <CardTitle>Sign in</CardTitle>
+          <CardDescription>Continue with your Google account</CardDescription>
         </CardHeader>
         <CardContent>
-          <form>
-            <div className="flex flex-col gap-6">
-              <div className="grid gap-3">
-                <Label htmlFor="email">Email</Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                />
-              </div>
-              <div className="grid gap-3">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <a
-                    href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    Forgot your password?
-                  </a>
-                </div>
-                <Input id="password" type="password" required />
-              </div>
-              <div className="flex flex-col gap-3">
-                <Button type="submit" className="w-full">
-                  Login
-                </Button>
-                <Button variant="outline" className="w-full">
-                  Login with Google
-                </Button>
-              </div>
-            </div>
-            <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
-              <a href="#" className="underline underline-offset-4">
-                Sign up
-              </a>
-            </div>
-          </form>
+          <div className="flex flex-col gap-4">
+            <Button onClick={handleGoogleSignIn} className="w-full">
+              Sign in with Google
+            </Button>
+          </div>
         </CardContent>
       </Card>
     </div>
