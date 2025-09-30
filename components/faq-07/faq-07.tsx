@@ -9,41 +9,51 @@ import { PlusIcon } from "lucide-react";
 
 const faq = [
   {
-    question: "What is your return policy?",
+    question: "What is Evallo?",
     answer:
-      "You can return unused items in their original packaging within 30 days for a refund or exchange. Contact support for assistance.",
+      "Evallo is a lead engagement, qualification, automation and intelligence platform that turns static forms and surveys into chat-like, conversational experiences. It helps sales and marketing teams understand buyer motivations and surface high-intent leads.",
   },
   {
-    question: "How do I track my order?",
+    question: "How does Evallo improve form completion rates?",
     answer:
-      "Track your order using the link provided in your confirmation email, or log into your account to view tracking details.",
+      "Evallo uses a chat-like interface that adapts to user responses, making flows feel conversational rather than static. Early users report ~2.3x higher completion rates and around 40% fewer drop-offs compared to traditional forms.",
   },
   {
-    question: "Do you ship internationally?",
+    question: "How does lead scoring and routing work?",
     answer:
-      "Yes, we ship worldwide. Shipping fees and delivery times vary by location, and customs duties may apply for some countries.",
+      "Leads are scored in real time based on configurable business rules (for example: budget, urgency, deal size). High-intent leads can be routed to the right SDRs automatically to accelerate your sales cycle.",
   },
   {
-    question: "What payment methods do you accept?",
+    question: "Which CRMs does Evallo integrate with?",
     answer:
-      "We accept Visa, MasterCard, American Express, PayPal, Apple Pay, and Google Pay, ensuring secure payment options for all customers.",
+      "Evallo supports CRM integrations and lead routing, but the public homepage doesn't list a comprehensive set. For a full list of supported CRMs and integration details, request a demo or contact the team via the meeting link or email.",
   },
   {
-    question: "What if I receive a damaged item?",
+    question: "Can I use Evallo on mobile?",
     answer:
-      "Please contact our support team within 48 hours of delivery with photos of the damaged item. We’ll arrange a replacement or refund.",
+      "Yes — Evallo’s conversational experiences are designed to work on mobile and desktop. The adaptive chat-like UI optimizes for form completion across devices.",
+  },
+  {
+    question: "How do I get help setting up my first Evallo?",
+    answer:
+      "Request a demo (https://pramodgeorge.com/meet) or email pramod@evallo.app for assistance. The team can help with initial setup, flow creation and CRM wiring.",
+  },
+  {
+    question: "How is Evallo different from Typeform and other form builders?",
+    answer:
+      "Evallo combines AI-generated conversational flows, real-time lead scoring and integrations for routing and automation — it's focused on qualifying buyers and generating actionable lead intelligence, not just collecting responses.",
   },
 ];
 
 const FAQ07 = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-12">
+    <div className="flex items-center justify-center px-6 py-12">
       <div className="w-full max-w-2xl">
         <h2 className="text-4xl md:text-5xl leading-[1.15]! font-semibold tracking-tighter">
           Frequently Asked Questions
         </h2>
         <p className="mt-2 text-xl text-muted-foreground">
-          Quick answers to common questions about our products and services.
+          Answers about how Evallo works, integrations, setup and results.
         </p>
 
         <Accordion

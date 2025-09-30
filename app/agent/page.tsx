@@ -6,6 +6,7 @@ import {
   SidebarInset,
   SidebarProvider,
 } from "@/components/ui/sidebar"
+import GeneratedForm from "@/components/builderform"
 
 export default function Page() {
   return (
@@ -38,12 +39,23 @@ export default function Page() {
           </SiteHeader>
 
           <div className="flex flex-1 flex-col">
-            <TabsContent value="agent" className="flex flex-1">
-              <div className="@container/main flex flex-1 flex-col gap-2 p-4">
-                <h2 className="text-lg font-semibold">Agent Overview</h2>
-                <p className="text-sm text-muted-foreground">Placeholder content for the Agent tab.</p>
-              </div>
-            </TabsContent>
+              <TabsContent value="agent" className="flex flex-1">
+                <div className="@container/main flex flex-1 flex-col gap-2 p-4">
+                  <h2 className="text-lg font-semibold">Agent Overview</h2>
+                  <p className="text-sm text-muted-foreground">Overview and quick stats for the agent.</p>
+
+                  {/* Two-column responsive layout: stacked on small, equal-width columns on md+ */}
+                  <div className="flex flex-1 flex-col md:flex-row gap-4 mt-2">
+                      {/* Left column: render GeneratedForm (swapped) */}
+                      <aside className="w-full md:w-1/2 rounded-lg border bg-secondary text-secondary-foreground p-4">
+                        <GeneratedForm />
+                      </aside>
+
+                      {/* Right column: empty placeholder after swap */}
+                      <main className="w-full md:w-1/2 rounded-lg border bg-card p-4" />
+                  </div>
+                </div>
+              </TabsContent>
 
             <TabsContent value="customization" className="flex flex-1">
               <div className="@container/main flex flex-1 flex-col gap-2 p-4">
