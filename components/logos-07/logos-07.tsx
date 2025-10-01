@@ -12,8 +12,8 @@ import { Marquee } from "@/components/ui/marquee";
 
 const Logos07Page = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6">
-      <div className="overflow-hidden">
+    <section className="flex items-center justify-center py-12 px-6">
+      <div className="overflow-hidden w-full max-w-(--breakpoint-xl) mx-auto">
         <p className="text-center text-xl font-medium">
           More than 2.2 million companies worldwide already trust us
         </p>
@@ -48,7 +48,7 @@ const Logos07Page = () => {
           </Marquee>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

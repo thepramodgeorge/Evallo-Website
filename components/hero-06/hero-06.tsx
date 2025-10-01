@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const Hero06 = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center px-6">
+    <section className="flex items-center justify-center py-12 px-6">
       <BackgroundPattern />
 
       <div className="relative z-10 text-center max-w-3xl">
@@ -21,11 +21,11 @@ const Hero06 = () => {
             Just released v1.0.0 <ArrowUpRight className="ml-1 size-4" />
           </Link>
         </Badge>
-        <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-6xl md:leading-[1.2] font-semibold tracking-tighter">
+        <h2 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-6xl md:leading-[1.2] font-semibold tracking-tighter">
           <span className="block">Understand your buyers.</span>
           <span className="block">Speak their language.</span>
           <span className="block">100x your conversions.</span>
-        </h1>
+        </h2>
         <p className="mt-6 md:text-lg">
           Transform boring static forms and surveys into engaging conversations, revealing hidden patterns and pain points to personalize marketing and supercharge your ROI.
         </p>
@@ -42,7 +42,7 @@ const Hero06 = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

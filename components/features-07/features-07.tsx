@@ -67,9 +67,9 @@ const features = [
 
 const Features07Page = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="max-w-(--breakpoint-xl) w-full py-10 px-6">
-        <h2 className="text-4xl md:text-[2.75rem] md:leading-[1.2] font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty sm:mx-auto sm:text-center">
+    <section className="flex items-center justify-center py-12 px-6">
+      <div className="max-w-(--breakpoint-xl) w-full py-8 px-6">
+        <h2 className="text-3xl sm:text-4xl md:leading-[1.2] font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty sm:mx-auto sm:text-center">
           Strengthen Your Strategy
         </h2>
         <p className="mt-2 text-muted-foreground text-lg sm:text-xl sm:text-center">
@@ -93,7 +93,7 @@ const Features07Page = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
