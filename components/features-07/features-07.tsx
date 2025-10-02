@@ -68,7 +68,7 @@ const features = [
 const Features07Page = () => {
   return (
     <section className="flex items-center justify-center py-12 px-6">
-      <div className="max-w-(--breakpoint-xl) w-full py-8 px-6">
+      <div className="max-w-(--breakpoint-xl) w-full mx-auto py-8">
         <h2 className="text-3xl sm:text-4xl md:leading-[1.2] font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty sm:mx-auto sm:text-center">
           Tailored for Every Industry
         </h2>
@@ -78,7 +78,7 @@ const Features07Page = () => {
         <div className="mt-12 sm:mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-y-8">
           {features.map((feature, index) => (
             <Link key={index} href="#">
-              <div className="flex gap-6 items-center rounded-lg -mx-2 sm:mx-0 max-w-lg">
+              <div className="flex gap-6 items-center rounded-lg mx-0 sm:mx-0 max-w-lg">
                 <div className="h-24 aspect-square shrink-0 rounded-lg bg-muted" />
                 <div className="">
                   <span className="font-semibold tracking-[-0.015em] text-lg">
