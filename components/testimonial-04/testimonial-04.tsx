@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React, { ComponentProps } from "react";
@@ -11,7 +11,7 @@ const testimonials = [
     company: "Brightlane",
     testimonial:
       "Since integrating Evallo into our site, qualified leads increased 3x and demo bookings doubled — lead qualification time dropped by 60%. Evallo captures buyer intent better than our old forms.",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const testimonials = [
     company: "RetailIQ",
     testimonial:
       "Evallo helped our sales team prioritize the highest-intent conversations. Our close rate rose from 12% to 26% in three months because leads are better qualified.",
-    avatar: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/women/2.jpg",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ const testimonials = [
     company: "Greenloop",
     testimonial:
       "With Evallo we consolidated three tools into one — acquisition costs are down and lead quality is up. The analytics help us fine-tune campaigns quickly.",
-    avatar: "https://images.unsplash.com/photo-1545996124-1b6f5a2a8d9a?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/women/3.jpg",
   },
   {
     id: 4,
@@ -38,7 +38,7 @@ const testimonials = [
     company: "Dockly",
     testimonial:
       "Implementation was fast and the ROI showed within 30 days. We identified high-intent segments and doubled our MQL→SQL velocity.",
-    avatar: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/men/4.jpg",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const testimonials = [
     company: "Nimbus Health",
     testimonial:
       "Support and setup were thoughtful — the team helped tailor flows to our personas and handoffs to CS are cleaner. Our onboarding time shortened significantly.",
-    avatar: "https://images.unsplash.com/photo-1544005310-1b4b6fb5f8f8?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/women/5.jpg",
   },
   {
     id: 6,
@@ -56,7 +56,7 @@ const testimonials = [
     company: "Platformly",
     testimonial:
       "Evallo's conversational flows and reporting highlighted motivations we hadn't tracked before — demo no-shows dropped 40% after prioritizing outreach.",
-    avatar: "https://images.unsplash.com/photo-1545996102-7f7a5c8e9d5f?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/men/6.jpg",
   },
   {
     id: 7,
@@ -65,7 +65,7 @@ const testimonials = [
     company: "ScaleSum",
     testimonial:
       "Evallo automated lead qualification so our reps talk to buyers who are already ready. Bookings-quality improved and rep efficiency increased noticeably.",
-    avatar: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/women/7.jpg",
   },
   {
     id: 8,
@@ -74,7 +74,7 @@ const testimonials = [
     company: "MarketSpring",
     testimonial:
       "The conversational experiences are smooth and the analytics expose intent signals we never had. Our pipeline velocity increased across the board.",
-    avatar: "https://images.unsplash.com/photo-1547425260-1403-2?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/men/8.jpg",
   },
   {
     id: 9,
@@ -83,7 +83,7 @@ const testimonials = [
     company: "Leadcraft",
     testimonial:
       "Evallo gave us better context on each lead so SDRs can personalize outreach. Reply rates and demo conversions climbed in the first month.",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
     id: 10,
@@ -92,7 +92,7 @@ const testimonials = [
     company: "Cloudline",
     testimonial:
       "Integration was seamless and the UI is extremely flexible. We built tailored flows that mirror our sales process in under a week.",
-    avatar: "https://images.unsplash.com/photo-1545996124-5f3f8c3b0f2d?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/men/10.jpg",
   },
   {
     id: 11,
@@ -101,7 +101,7 @@ const testimonials = [
     company: "Carelytics",
     testimonial:
       "Evallo reduced friction during onboarding and handed off higher-quality leads. Our CS team closes onboarding issues faster now.",
-    avatar: "https://images.unsplash.com/photo-1545996124-7c9f6d3c3d3b?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/women/11.jpg",
   },
   {
     id: 12,
@@ -110,7 +110,7 @@ const testimonials = [
     company: "DealForge",
     testimonial:
       "The reporting and segmentation capabilities let us measure intent in new ways — we now prioritize follow-ups with much better results.",
-    avatar: "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/men/12.jpg",
   },
   {
     id: 13,
@@ -119,7 +119,7 @@ const testimonials = [
     company: "Adwise",
     testimonial:
       "We attribute a clear uplift in demo scheduling and lower CPL to Evallo's smarter qualification and conversational UI.",
-    avatar: "https://images.unsplash.com/photo-1544005313-6f5d2b3c4f5a?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/women/13.jpg",
   },
   {
     id: 14,
@@ -128,7 +128,7 @@ const testimonials = [
     company: "Stackline",
     testimonial:
       "The implementation was developer-friendly and the API made it simple to connect into our stack. Data integrity improved immediately.",
-    avatar: "https://images.unsplash.com/photo-1544005313-3b1f1c2d3e4f?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/men/14.jpg",
   },
   {
     id: 15,
@@ -137,7 +137,7 @@ const testimonials = [
     company: "Launchly",
     testimonial:
       "Evallo's messaging suggestions and conversation templates helped us iterate quickly and increase conversion on landing pages.",
-    avatar: "https://images.unsplash.com/photo-1545996102-8f8f5c7c4f2a?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/women/15.jpg",
   },
   {
     id: 16,
@@ -146,7 +146,7 @@ const testimonials = [
     company: "B2Bify",
     testimonial:
       "For enterprise deals, Evallo surfaces decision-makers faster and provides the context reps need. Deal sizes and win rates improved.",
-    avatar: "https://images.unsplash.com/photo-1545996102-2a2b3c4d5e6f?auto=format&fit=crop&w=256&q=80",
+    avatar: "https://randomuser.me/api/portraits/men/16.jpg",
   },
 ];
 
@@ -165,6 +165,7 @@ const Testimonial04 = () => (
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <Avatar className="size-10">
+                  <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
                   <AvatarFallback className="text-xl font-medium bg-primary text-primary-foreground">
                     {testimonial.name.charAt(0)}
                   </AvatarFallback>

@@ -5,8 +5,6 @@ import {
   Logo04,
   Logo05,
   Logo06,
-  Logo07,
-  Logo08,
 } from "@/components/logos-06/logos";
 import { Marquee } from "@/components/ui/marquee";
 
@@ -18,10 +16,10 @@ const Logos06Page = () => {
           Trusted by teams at the top organizations
         </h2>
 
-  <div className="mt-10 flex items-center justify-center gap-x-14 gap-y-10">
+  <div className="mt-10 flex items-center justify-center gap-x-20 gap-y-10">
           <Marquee
             pauseOnHover
-            className="[--duration:20s] [&_svg]:mr-10 mask-x-from-70% mask-x-to-90%"
+            className="[--duration:20s] [&_img]:mr-12 mask-x-from-70% mask-x-to-90%"
           >
             <Logo01 />
             <Logo02 />
@@ -29,8 +27,6 @@ const Logos06Page = () => {
             <Logo04 />
             <Logo05 />
             <Logo06 />
-            <Logo07 />
-            <Logo08 />
           </Marquee>
         </div>
       </div>
