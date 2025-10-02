@@ -11,57 +11,57 @@ import Link from "next/link";
 const features = [
   {
     icon: Goal,
-    title: "Identify Opportunities",
+    title: "SaaS",
     description:
-      "Easily uncover untapped areas to explore and expand your reach effortlessly and effectively.",
+      "Qualify leads with AI-driven conversational flows, boosting trial conversions by 2.3x.",
   },
   {
     icon: BookCheck,
-    title: "Build Authority",
+    title: "Agencies",
     description:
-      "Create valuable content that resonates, inspires trust, and positions you as an expert.",
+      "Streamline client onboarding with interactive forms that automate project kickoffs.",
   },
   {
     icon: ChartPie,
-    title: "Instant Insights",
+    title: "Real Estate",
     description:
-      "Gain immediate, actionable insights with a quick glance, enabling fast decision-making.",
+      "Engage prospects with virtual tours and chat-based property inquiries.",
   },
   {
     icon: Users,
-    title: "Engage with Your Audience",
+    title: "E-commerce",
     description:
-      "Boost audience engagement with interactive features like polls, quizzes, and forms.",
+      "Boost conversions with conversational checkouts that guide shoppers seamlessly.",
   },
   {
     icon: FolderSync,
-    title: "Automate Your Workflow",
+    title: "Freelancers",
     description:
-      "Streamline your processes by automating repetitive tasks, saving time and reducing effort.",
+      "Showcase services with dynamic portfolios and adaptive inquiry forms.",
   },
   {
     icon: Zap,
-    title: "Accelerate Growth",
+    title: "Manufacturing",
     description:
-      "Supercharge your growth by implementing strategies that drive results quickly and efficiently.",
-  },
-  {
-    icon: BookCheck,
-    title: "Build Authority",
-    description:
-      "Create valuable content that resonates, inspires trust, and positions you as an expert.",
-  },
-  {
-    icon: ChartPie,
-    title: "Instant Insights",
-    description:
-      "Gain immediate, actionable insights with a quick glance, enabling fast decision-making.",
+      "Automate supply chain surveys for operational insights and efficiency.",
   },
   {
     icon: Goal,
-    title: "Identify Opportunities",
+    title: "Healthcare",
     description:
-      "Easily uncover untapped areas to explore and expand your reach effortlessly and effectively.",
+      "Improve patient intake with conversational forms that reduce drop-offs.",
+  },
+  {
+    icon: BookCheck,
+    title: "Education",
+    description:
+      "Enhance enrollment with interactive surveys for student engagement.",
+  },
+  {
+    icon: ChartPie,
+    title: "Finance",
+    description:
+      "Streamline loan applications with AI-assisted conversational workflows.",
   },
 ];
 
@@ -70,10 +70,10 @@ const Features07Page = () => {
     <section className="flex items-center justify-center py-12 px-6">
       <div className="max-w-(--breakpoint-xl) w-full py-8 px-6">
         <h2 className="text-3xl sm:text-4xl md:leading-[1.2] font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty sm:mx-auto sm:text-center">
-          Strengthen Your Strategy
+          Tailored for Every Industry
         </h2>
         <p className="mt-2 text-muted-foreground text-lg sm:text-xl sm:text-center">
-          Enhance your strategy with intelligent tools designed for success.
+          Discover how Evallo adapts to your sector with industry-specific conversational experiences.
         </p>
         <div className="mt-12 sm:mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-y-8">
           {features.map((feature, index) => (
