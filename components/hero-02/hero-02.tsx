@@ -40,14 +40,14 @@ const Hero02 = () => {
           <p className="mt-6 max-w-[60ch] sm:text-lg">
             Transform static forms into engaging conversational experiences, identify high-intent leads in real time, and surface buyer motivations with AI-driven flows and analysis.
           </p>
-          <div className="mt-12 flex items-center gap-4">
-            <Button size="lg" className="rounded-full text-base" asChild>
+          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 sm:gap-4">
+            <Button size="lg" className="rounded-full text-base w-full sm:w-auto" asChild>
               <Link href="https://pramodgeorge.com/meet">Request a Demo <ArrowUpRight className="h-5! w-5!" /></Link>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="rounded-full text-base shadow-none"
+              className="rounded-full text-base shadow-none w-full sm:w-auto"
               asChild
             >
               <Link href="https://discord.gg/K32YGWADZW"><CirclePlay className="h-5! w-5!" /> Join Discord</Link>
