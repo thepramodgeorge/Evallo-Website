@@ -156,7 +156,7 @@ const Testimonial04 = () => (
       <h2 className="mb-14 text-3xl sm:text-4xl font-semibold text-center tracking-tighter">
         Testimonials
       </h2>
-      <div className="max-w-(--breakpoint-xl) mx-auto columns-1 md:columns-2 lg:columns-3 gap-8">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-8">
         {testimonials.map((testimonial) => (
           <div
             key={testimonial.id}
