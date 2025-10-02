@@ -244,14 +244,15 @@ export const NavbarLogo = ({ visible }: { visible?: boolean }) => {
       className="relative z-20 mr-4 flex items-center space-x-2 px-2 py-1 text-sm font-normal text-black"
     >
       <img
-        src="https://assets.aceternity.com/logo-dark.png"
-        alt="logo"
-        width={30}
-        height={30}
+        src="/Evallo%20Logo.png"
+        alt="Evallo logo"
+        width={60}
+        height={50}
+        style={{ objectFit: "contain" }}
       />
       {/* Hide the company name when the navbar is in its minimized/compact state */}
       {!visible && (
-        <span className="font-medium text-black dark:text-white">Startup</span>
+        <span className="font-medium text-black dark:text-white"></span>
       )}
     </a>
   );
