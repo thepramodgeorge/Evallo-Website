@@ -4,6 +4,7 @@ import {
   AccordionItem,
 } from "@/components/ui/accordion";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import { Accordion as AccordionPrimitive } from "radix-ui";
 import { PlusIcon } from "lucide-react";
 
@@ -47,8 +48,8 @@ const faq = [
 
 const FAQ07 = () => {
   return (
-    <div className="flex items-center justify-center px-6 py-12">
-      <div className="w-full max-w-2xl">
+    <section className="flex items-center justify-center py-12 px-6">
+      <div className="max-w-2xl w-full mx-auto py-8">
         <h2 className="text-3xl sm:text-4xl font-semibold text-center tracking-tighter">
           Frequently Asked Questions
         </h2>
@@ -85,8 +86,14 @@ const FAQ07 = () => {
             </AccordionItem>
           ))}
         </Accordion>
+        {/* CTA at end of section */}
+        <div className="mt-8 flex justify-center">
+          <Button asChild>
+            <a href="#">Create Your First Evallo in 2 mins</a>
+          </Button>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

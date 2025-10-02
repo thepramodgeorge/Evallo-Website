@@ -1,17 +1,8 @@
 "use client";
 
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import {
-  Carousel,
-  CarouselApi,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
 import { StarIcon } from "lucide-react";
-import { useEffect, useState } from "react";
+import React from "react";
 
 const testimonials = [
   {
@@ -52,50 +43,15 @@ const testimonials = [
   },
 ];
 const Testimonial06 = () => {
-  const [api, setApi] = useState<CarouselApi>();
-  const [current, setCurrent] = useState(0);
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    if (!api) {
-      return;
-    }
-
-    setCount(api.scrollSnapList().length);
-    setCurrent(api.selectedScrollSnap() + 1);
-
-    api.on("select", () => {
-      setCurrent(api.selectedScrollSnap() + 1);
-    });
-  }, [api]);
+  // Render only the first testimonial as a static card
+  const testimonial = testimonials[0];
 
   return (
     <section className="flex items-center justify-center py-12 px-6">
       <div className="max-w-(--breakpoint-xl) w-full mx-auto py-8 px-6">
-        {/* Heading removed per request - carousel only */}
-        <div className="mt-8 w-full">
-          <Carousel setApi={setApi}>
-            <CarouselContent>
-              {testimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id}>
-                  <TestimonialCard testimonial={testimonial} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-          <div className="flex items-center justify-center gap-2">
-            {Array.from({ length: count }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => api?.scrollTo(index)}
-                className={cn("h-3.5 w-3.5 rounded-full border-2", {
-                  "bg-primary border-primary": current === index + 1,
-                })}
-              />
-            ))}
-          </div>
+        {/* Heading removed per request - single testimonial only */}
+        <div className="mt-2 w-full">
+          <TestimonialCard testimonial={testimonial} />
         </div>
       </div>
     </section>

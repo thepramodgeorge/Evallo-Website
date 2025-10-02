@@ -65,7 +65,6 @@ const Footer04Page = () => {
                 ))}
               </ul>
             </div>
-
             {/* Subscribe Newsletter */}
             <div className="max-w-xs w-full">
               <h6 className="font-medium">Stay up to date</h6>

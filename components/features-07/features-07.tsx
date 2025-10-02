@@ -7,6 +7,7 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const features = [
   {
@@ -91,6 +92,12 @@ const Features07Page = () => {
               </div>
             </Link>
           ))}
+        </div>
+        {/* CTA Button */}
+        <div className="mt-8 flex justify-center">
+          <Button asChild size="lg">
+            <Link href="#">Create Your First Evallo in 2 mins</Link>
+          </Button>
         </div>
       </div>
     </section>

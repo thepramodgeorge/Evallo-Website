@@ -151,8 +151,8 @@ const testimonials = [
 ];
 
 const Testimonial04 = () => (
-  <div className="flex justify-center items-center py-12 px-6">
-    <div>
+  <section className="flex items-center justify-center py-12 px-6">
+    <div className="max-w-(--breakpoint-xl) w-full mx-auto py-8">
       <h2 className="mb-14 text-3xl sm:text-4xl font-semibold text-center tracking-tighter">
         Testimonials
       </h2>
@@ -184,8 +184,14 @@ const Testimonial04 = () => (
           </div>
         ))}
       </div>
+      {/* CTA at end of section */}
+      <div className="mt-8 flex justify-center">
+        <Button asChild>
+          <Link href="#">Create Your First Evallo in 2 mins</Link>
+        </Button>
+      </div>
     </div>
-  </div>
+  </section>
 );
 
 // kept existing TestimonialList for reference (not exported). Cards are rendered inline in the grid above.
