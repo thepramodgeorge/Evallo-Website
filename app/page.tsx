@@ -7,7 +7,6 @@ import Testimonial04 from "@/components/testimonial-04/testimonial-04"
 import TestimonialBanner from "@/components/testimonial-banner"
 import Footer04Page from "@/components/footer-04/footer-04"
 import { Marquee } from "@/components/ui/marquee"
-import Logos06Page from "@/components/logos-06/logos-06"
 import Features04Page from "@/components/features-04/features-04"
 import Features05Page from "@/components/features-05/features-05"
 import Features06Page from "@/components/features-06/features-06"
@@ -21,7 +20,6 @@ export default function Home() {
     {/* <Hero /> */}
     <Hero02 />
     {/* Logo marquee under hero */}
-    <Logos06Page />
     <TestimonialBanner />
     <Features04Page />
     {/* <Features05Page />*/}
