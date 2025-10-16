@@ -35,10 +35,10 @@ const Hero02 = () => {
             <span className="text-sm text-muted-foreground">4.9 Rating from over 14 clients</span>
           </div>
           <h1 className="mt-6 max-w-[38ch] text-4xl md:text-5xl lg:text-[2.75rem] xl:text-[3.25rem] font-semibold leading-[1.05]! tracking-tighter">
-            Understand Your Buyers. Speak Their Language. 100x Your Conversions.
+            Dynamic AI chat surveys that derive customer insights automagically.
           </h1>
           <p className="mt-6 max-w-[60ch] sm:text-lg">
-            Transform static forms into engaging conversational experiences, identify high-intent leads in real time, and surface buyer motivations with AI-driven flows and analysis.
+            Traditional surveys ask the same questions to everyone. Evallo asks the right questions to each person, uncovering deeper insights. No logic trees, no setup pain - Deploy in minutes.
           </p>
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 sm:gap-4">
             <Button size="lg" className="rounded-full text-base w-full sm:w-auto" asChild>

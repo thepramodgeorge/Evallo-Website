@@ -68,7 +68,7 @@ const Pricing03 = () => {
 
   return (
     <section className="flex flex-col items-center justify-center py-12 px-6">
-      <h2 className="text-3xl sm:text-4xl font-semibold text-center tracking-tighter">
+      <h2 className="text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em] text-center">
         Pricing
       </h2>
       <Tabs

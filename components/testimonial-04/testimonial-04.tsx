@@ -153,7 +153,7 @@ const testimonials = [
 const Testimonial04 = () => (
   <section className="flex items-center justify-center py-12 px-6">
     <div className="max-w-(--breakpoint-xl) w-full mx-auto py-8">
-      <h2 className="mb-14 text-3xl sm:text-4xl font-semibold text-center tracking-tighter">
+      <h2 className="mb-14 text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em] text-center">
         Testimonials
       </h2>
       <div className="columns-1 md:columns-2 lg:columns-3 gap-8">

@@ -50,10 +50,10 @@ const FAQ07 = () => {
   return (
     <section className="flex items-center justify-center py-12 px-6">
       <div className="max-w-2xl w-full mx-auto py-8">
-        <h2 className="text-3xl sm:text-4xl font-semibold text-center tracking-tighter">
+        <h2 className="text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em] text-center">
           Frequently Asked Questions
         </h2>
-        <p className="mt-2 text-xl text-muted-foreground">
+        <p className="mt-2 text-xl text-muted-foreground text-center">
           Answers about how Evallo works, integrations, setup and results.
         </p>
 

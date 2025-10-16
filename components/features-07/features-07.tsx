@@ -70,7 +70,7 @@ const Features07Page = () => {
   return (
     <section className="flex items-center justify-center py-12 px-6">
       <div className="max-w-(--breakpoint-xl) w-full mx-auto py-8">
-        <h2 className="text-3xl sm:text-4xl md:leading-[1.2] font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty sm:mx-auto sm:text-center">
+        <h2 className="text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em] sm:max-w-xl text-pretty sm:mx-auto sm:text-center">
           Tailored for Every Industry
         </h2>
         <p className="mt-2 text-muted-foreground text-lg sm:text-xl sm:text-center">
