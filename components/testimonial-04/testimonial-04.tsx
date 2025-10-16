@@ -187,7 +187,7 @@ const Testimonial04 = () => (
       </div>
       {/* CTA at end of section */}
       <div className="mt-8 flex justify-center">
-        <Button asChild>
+        <Button asChild size="lg" className="rounded-full">
           <Link href="#">Create Your First Evallo in 2 mins</Link>
         </Button>
       </div>

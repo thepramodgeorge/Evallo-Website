@@ -88,7 +88,7 @@ const FAQ07 = () => {
         </Accordion>
         {/* CTA at end of section */}
         <div className="mt-8 flex justify-center">
-          <Button asChild>
+          <Button asChild size="lg" className="rounded-full">
             <a href="#">Create Your First Evallo in 2 mins</a>
           </Button>
         </div>

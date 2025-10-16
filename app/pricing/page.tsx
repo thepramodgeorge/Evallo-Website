@@ -4,62 +4,45 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
-import { CircleCheck, CircleHelp } from "lucide-react";
+import { CircleCheck } from "lucide-react";
 import { useState } from "react";
-
-const tooltipContent = {
-  styles: "Choose from a variety of styles to suit your preferences.",
-  filters: "Choose from a variety of filters to enhance your portraits.",
-  credits: "Use these credits to retouch your portraits.",
-};
 
 const YEARLY_DISCOUNT = 20;
 const plans = [
   {
     name: "Starter",
-    price: 0,
-    description:
-      "Get 2 Free Evallos.",
+    price: 29,
+    description: "500 survey responses per month",
     features: [
-      { title: "Upto 15 conversations" }
+      { title: "Core AI analysis & reporting" },
+      { title: "Web & email deployment" }
     ],
-    buttonText: "Get 20 portraits in 5 hours",
+    buttonText: "Start 7-Day Free Trial",
   },
   {
-    name: "Advanced",
-    price: 40,
+    name: "Pro",
+    price: 79,
     isRecommended: true,
-    description:
-      "Get 50 AI-generated portraits with 5 unique styles and filters.",
+    description: "2,500 survey responses per month",
     features: [
-      { title: "3 hours turnaround time" },
-      { title: "50 AI portraits" },
-      { title: "Choice of 5 styles", tooltip: tooltipContent.styles },
-      { title: "Choice of 5 filters", tooltip: tooltipContent.filters },
-      { title: "5 retouch credits", tooltip: tooltipContent.credits },
+      { title: "Advanced AI analysis & sentiment tracking" },
+      { title: "Custom branding & white-labeling" },
+      { title: "API Access" }
     ],
-    buttonText: "Get 50 portraits in 3 hours",
+    buttonText: "Start 7-Day Free Trial",
     isPopular: true,
   },
   {
-    name: "Premium",
-    price: 80,
-    description:
-      "Get 100 AI-generated portraits with 10 unique styles and filters.",
+    name: "Scale",
+    price: 199,
+    description: "10,000 survey responses per month",
     features: [
-      { title: "1-hour turnaround time" },
-      { title: "100 AI portraits" },
-      { title: "Choice of 10 styles", tooltip: tooltipContent.styles },
-      { title: "Choice of 10 filters", tooltip: tooltipContent.filters },
-      { title: "10 retouch credits", tooltip: tooltipContent.credits },
+      { title: "Priority support & setup" },
+      { title: "Dedicated success manager" },
+      { title: "Full platform customization" }
     ],
-    buttonText: "Get 100 portraits in 1 hour",
+    buttonText: "Start 7-Day Free Trial",
   },
 ];
 
@@ -109,7 +92,7 @@ const Pricing03 = () => {
               $
               {selectedBillingPeriod === "monthly"
                 ? plan.price
-                : plan.price * ((100 - YEARLY_DISCOUNT) / 100)}
+                : Math.ceil(plan.price * ((100 - YEARLY_DISCOUNT) / 100))}
               <span className="ml-1.5 text-sm text-muted-foreground font-normal">
                 /month
               </span>
@@ -121,7 +104,7 @@ const Pricing03 = () => {
             <Button
               variant={plan.isPopular ? "default" : "outline"}
               size="lg"
-              className="w-full mt-6"
+              className="w-full mt-6 rounded-full"
             >
               {plan.buttonText}
             </Button>
@@ -131,14 +114,6 @@ const Pricing03 = () => {
                 <li key={feature.title} className="flex items-start gap-1.5">
                   <CircleCheck className="h-4 w-4 mt-1 text-green-600" />
                   {feature.title}
-                  {feature.tooltip && (
-                    <Tooltip>
-                      <TooltipTrigger className="cursor-help">
-                        <CircleHelp className="h-4 w-4 mt-1 text-gray-500" />
-                      </TooltipTrigger>
-                      <TooltipContent>{feature.tooltip}</TooltipContent>
-                    </Tooltip>
-                  )}
                 </li>
               ))}
             </ul>

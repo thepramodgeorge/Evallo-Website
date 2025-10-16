@@ -24,7 +24,6 @@ export default function Home() {
     <Features04Page />
     {/* <Features05Page />*/}
     <Features06Page />
-    
     <HowItWorksSection />
     <Testimonial04 />
     <Features07 />

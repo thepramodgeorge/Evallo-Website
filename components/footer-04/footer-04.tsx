@@ -70,7 +70,7 @@ const Footer04Page = () => {
               <h6 className="font-medium">Stay up to date</h6>
               <form className="mt-6 flex items-center gap-2">
                 <Input type="email" placeholder="Enter your email" />
-                <Button>Subscribe</Button>
+                <Button size="lg" className="rounded-full">Subscribe</Button>
               </form>
             </div>
           </div>
