@@ -26,7 +26,7 @@ export default function Home() {
     <Features06Page />
     <HowItWorksSection />
     <Testimonial04 />
-    <Features07 />
+    {/*<Features07 />*/}
     <Pricing03 />
     <TestimonialBanner 
       quote="We replaced 3 tools with Evallo. Our sales cycle shortened by 30%, and marketing finally knows what messaging works!."
