@@ -13,8 +13,9 @@ const plans = [
   {
     name: "Starter",
     price: 29,
-    description: "500 survey responses per month",
+    description: "For Hobbyists. 500 survey responses per month",
     features: [
+      { title: "10 Surveys" },
       { title: "Core AI analysis & reporting" },
       { title: "Web & email deployment" }
     ],
@@ -24,11 +25,11 @@ const plans = [
     name: "Pro",
     price: 79,
     isRecommended: true,
-    description: "2,500 survey responses per month",
+    description: "For Teams. 2,500 survey responses per month",
     features: [
+      { title: "100 Surveys" },
       { title: "Advanced AI analysis & sentiment tracking" },
-      { title: "Custom branding & white-labeling" },
-      { title: "API Access" }
+      { title: "Custom branding & white-labeling" }
     ],
     buttonText: "Start 7-Day Free Trial",
     isPopular: true,
@@ -36,11 +37,11 @@ const plans = [
   {
     name: "Scale",
     price: 199,
-    description: "10,000 survey responses per month",
+    description: "For Enterprises. 10,000 survey responses per month",
     features: [
+      { title: "Unlimited Surveys" },
       { title: "Priority support & setup" },
-      { title: "Dedicated success manager" },
-      { title: "Full platform customization" }
+      { title: "Dedicated success manager" }
     ],
     buttonText: "Start 7-Day Free Trial",
   },
@@ -98,7 +99,14 @@ const Pricing03 = () => {
               </span>
             </p>
             <p className="mt-4 font-medium text-muted-foreground">
-              {plan.description}
+              {plan.description.includes('.') ? (
+                <>
+                  {plan.description.split('.')[0]}<br />
+                  {plan.description.split('.')[1]}
+                </>
+              ) : (
+                plan.description
+              )}
             </p>
 
             <Button

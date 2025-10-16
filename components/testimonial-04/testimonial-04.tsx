@@ -175,7 +175,7 @@ const Testimonial04 = () => (
                   <p className="text-sm text-gray-500">{testimonial.designation}</p>
                 </div>
               </div>
-              <Button variant="ghost" size="icon" asChild>
+              <Button variant="ghost" size="lg" className="rounded-full" asChild>
                 <Link href="#" target="_blank">
                   <TwitterLogo className="w-4 h-4" />
                 </Link>
