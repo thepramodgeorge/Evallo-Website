@@ -4,7 +4,6 @@ import * as React from "react"
 import {
   IconCamera,
   IconChartBar,
-  IconDashboard,
   IconDatabase,
   IconFileAi,
   IconFileDescription,
@@ -42,11 +41,6 @@ const data = {
     avatar: "https://untitledui.com/images/avatars/transparent/amelie-bennett",
   },
   navMain: [
-    {
-      title: "Dashboard",
-      url: "/dashboard",
-      icon: IconDashboard,
-    },
     {
       title: "Lifecycle",
       url: "#",

@@ -37,7 +37,7 @@ export function SiteHeader({ children, actions, left }: SiteHeaderProps) {
         <div className="flex items-center gap-1">
           <SidebarTrigger className="-ml-1" />
           <Separator orientation="vertical" className="mx-2 data-[orientation=vertical]:h-4" />
-          {left ?? (!children ? <h1 className="text-base font-medium">Dashboard</h1> : null)}
+          {left ?? (!children ? <h1 className="text-base font-medium">Evallo</h1> : null)}
         </div>
 
         {/* Center: children (absolutely centered) */}

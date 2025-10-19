@@ -21,7 +21,7 @@ export function LoginForm({
   const handleGoogleSignIn = async () => {
     try {
       const supabase = getSupabaseClient()
-      const redirectTo = `${window.location.origin}/dashboard`
+      const redirectTo = `${window.location.origin}/agent`
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: { redirectTo },
@@ -39,15 +39,15 @@ export function LoginForm({
   useEffect(() => {
     const supabase = getSupabaseClient()
 
-    // If there is already a session, redirect to dashboard
+    // If there is already a session, redirect to agent
     supabase.auth.getSession().then(({ data }) => {
-      if (data?.session) router.push("/dashboard")
+      if (data?.session) router.push("/agent")
     })
 
     // Subscribe to auth state changes and redirect on sign in
     const { data: listener } = supabase.auth.onAuthStateChange((event, session) => {
       if (event === "SIGNED_IN" && session) {
-        router.push("/dashboard")
+        router.push("/agent")
       }
     })
 

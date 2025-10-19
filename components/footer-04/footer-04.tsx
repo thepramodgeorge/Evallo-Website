@@ -80,7 +80,7 @@ const Footer04Page = () => {
             <span className="text-muted-foreground">
               &copy; {new Date().getFullYear()}{" "}
               <Link href="/" target="_blank">
-                Shadcn UI Blocks
+                Evallo.app
               </Link>
               . All rights reserved.
             </span>

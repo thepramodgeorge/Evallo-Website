@@ -1,6 +1,5 @@
 "use client"
 
-import { usePathname } from "next/navigation"
 import React, { useState } from "react"
 import {
   Navbar,
@@ -15,17 +14,11 @@ import {
 } from "@/components/ui/resizable-navbar"
 
 export default function NavbarWrapper() {
-  const pathname = usePathname() || "/"
   const [isOpen, setIsOpen] = useState(false)
-
-  // Hide the navbar for app routes (logged-in pages)
-  const appRoutes = ["/dashboard", "/agent", "/login"]
-  if (appRoutes.some(route => pathname.startsWith(route))) return null
 
   const items = [
     { name: "Home", link: "/" },
     { name: "Pricing", link: "/pricing" },
-    { name: "Dashboard", link: "/dashboard" },
   ]
 
   return (
