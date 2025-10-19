@@ -29,9 +29,9 @@ export default function Home() {
     {/*<Features07 />*/}
     <Pricing03 />
     <TestimonialBanner 
-      quote="We replaced 3 tools with Evallo. Our sales cycle shortened by 30%, and marketing finally knows what messaging works!."
+      quote="We replaced SurveyMonkey with Evallo. Our survey completion rates increased by 40%, and we get richer insights from every response."
       author="Sarah L"
-      role="Head of Growth, Greenhouse"
+      role="Head of Research, Greenhouse"
       avatarSrc="https://randomuser.me/api/portraits/women/81.jpg"
     />
     <FAQ07 />

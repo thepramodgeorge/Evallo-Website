@@ -7,28 +7,28 @@ const testimonials = [
   {
     id: 1,
     name: "Arjun Patel",
-    designation: "Head of Growth",
+    designation: "Head of Research",
     company: "Brightlane",
     testimonial:
-      "Since integrating Evallo into our site, qualified leads increased 3x and demo bookings doubled — lead qualification time dropped by 60%. Evallo captures buyer intent better than our old forms.",
+      "Since switching to Evallo, our survey response rates jumped from 15% to 45%. The AI-powered questions adapt to respondents, giving us much richer data than SurveyMonkey ever did.",
     avatar: "https://randomuser.me/api/portraits/men/1.jpg",
   },
   {
     id: 2,
     name: "Maya Rodriguez",
-    designation: "VP of Sales",
+    designation: "VP of Customer Insights",
     company: "RetailIQ",
     testimonial:
-      "Evallo helped our sales team prioritize the highest-intent conversations. Our close rate rose from 12% to 26% in three months because leads are better qualified.",
+      "Evallo's AI automatically categorizes open-ended responses and identifies themes we never would have found manually. Survey analysis that used to take days now happens in minutes.",
     avatar: "https://randomuser.me/api/portraits/women/2.jpg",
   },
   {
     id: 3,
     name: "Sofia Nguyen",
-    designation: "Head of Marketing",
+    designation: "Head of Product Research",
     company: "Greenloop",
     testimonial:
-      "With Evallo we consolidated three tools into one — acquisition costs are down and lead quality is up. The analytics help us fine-tune campaigns quickly.",
+      "We replaced SurveyMonkey with Evallo and our completion rates doubled. The conversational format feels more natural, and respondents provide more detailed feedback.",
     avatar: "https://randomuser.me/api/portraits/women/3.jpg",
   },
   {
@@ -37,16 +37,16 @@ const testimonials = [
     designation: "Founder & CEO",
     company: "Dockly",
     testimonial:
-      "Implementation was fast and the ROI showed within 30 days. We identified high-intent segments and doubled our MQL→SQL velocity.",
+      "Evallo's AI generates follow-up questions based on previous answers, uncovering insights we didn't even know to ask about. Game-changing for user research.",
     avatar: "https://randomuser.me/api/portraits/men/4.jpg",
   },
   {
     id: 5,
     name: "Priya Kaur",
-    designation: "Customer Success Manager",
+    designation: "Customer Experience Manager",
     company: "Nimbus Health",
     testimonial:
-      "Support and setup were thoughtful — the team helped tailor flows to our personas and handoffs to CS are cleaner. Our onboarding time shortened significantly.",
+      "Setting up surveys in Evallo takes minutes instead of hours. The AI suggests question types and logic flows, making complex surveys simple to build.",
     avatar: "https://randomuser.me/api/portraits/women/5.jpg",
   },
   {
@@ -55,34 +55,34 @@ const testimonials = [
     designation: "Director of Product",
     company: "Platformly",
     testimonial:
-      "Evallo's conversational flows and reporting highlighted motivations we hadn't tracked before — demo no-shows dropped 40% after prioritizing outreach.",
+      "Evallo automatically detects survey fatigue and adjusts question difficulty. Our long-form surveys now have completion rates we never thought possible.",
     avatar: "https://randomuser.me/api/portraits/men/6.jpg",
   },
   {
     id: 7,
     name: "Nina Patel",
-    designation: "Head of Revenue Operations",
+    designation: "Head of Market Research",
     company: "ScaleSum",
     testimonial:
-      "Evallo automated lead qualification so our reps talk to buyers who are already ready. Bookings-quality improved and rep efficiency increased noticeably.",
-    avatar: "https://randomuser.me/api/portraits/women/7.jpg",
+      "The AI insights feature surfaces correlations and patterns in our survey data instantly. We're making data-driven decisions faster than ever before.",
+    avatar: "https://randomuser.me/api/portraits/women/22.jpg",
   },
   {
     id: 8,
     name: "Carlos Mendez",
-    designation: "Growth Lead",
+    designation: "Research Lead",
     company: "MarketSpring",
     testimonial:
-      "The conversational experiences are smooth and the analytics expose intent signals we never had. Our pipeline velocity increased across the board.",
+      "Evallo's real-time analytics let us monitor survey responses as they come in. We can adjust our research strategy mid-survey based on early findings.",
     avatar: "https://randomuser.me/api/portraits/men/8.jpg",
   },
   {
     id: 9,
     name: "Aisha Bello",
-    designation: "Director of Demand Gen",
+    designation: "Director of User Research",
     company: "Leadcraft",
     testimonial:
-      "Evallo gave us better context on each lead so SDRs can personalize outreach. Reply rates and demo conversions climbed in the first month.",
+      "SurveyMonkey couldn't handle our complex branching logic, but Evallo's AI makes it effortless. We've eliminated response bias and gotten more honest feedback.",
     avatar: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
@@ -91,7 +91,7 @@ const testimonials = [
     designation: "VP Product",
     company: "Cloudline",
     testimonial:
-      "Integration was seamless and the UI is extremely flexible. We built tailored flows that mirror our sales process in under a week.",
+      "Integration was seamless and the API lets us pull survey data directly into our analytics stack. No more manual exports and data cleaning.",
     avatar: "https://randomuser.me/api/portraits/men/10.jpg",
   },
   {
@@ -100,26 +100,26 @@ const testimonials = [
     designation: "Head of Customer Success",
     company: "Carelytics",
     testimonial:
-      "Evallo reduced friction during onboarding and handed off higher-quality leads. Our CS team closes onboarding issues faster now.",
+      "Evallo's AI detects inconsistent responses and follows up automatically. Data quality has never been this high, and our insights are more actionable.",
     avatar: "https://randomuser.me/api/portraits/women/11.jpg",
   },
   {
     id: 12,
     name: "Marcus Young",
-    designation: "Head of Sales Ops",
+    designation: "Head of Data Analytics",
     company: "DealForge",
     testimonial:
-      "The reporting and segmentation capabilities let us measure intent in new ways — we now prioritize follow-ups with much better results.",
+      "The sentiment analysis and automated tagging features save us hours of manual coding. We can now analyze thousands of responses in the time it used to take for hundreds.",
     avatar: "https://randomuser.me/api/portraits/men/12.jpg",
   },
   {
     id: 13,
     name: "Zoe Chen",
-    designation: "Growth Marketing Manager",
+    designation: "Research Manager",
     company: "Adwise",
     testimonial:
-      "We attribute a clear uplift in demo scheduling and lower CPL to Evallo's smarter qualification and conversational UI.",
-    avatar: "https://randomuser.me/api/portraits/women/13.jpg",
+      "Evallo predicts survey drop-off points and suggests improvements in real-time. Our survey completion rates have increased by 60% since implementation.",
+    avatar: "https://randomuser.me/api/portraits/women/50.jpg",
   },
   {
     id: 14,
@@ -127,25 +127,25 @@ const testimonials = [
     designation: "CTO",
     company: "Stackline",
     testimonial:
-      "The implementation was developer-friendly and the API made it simple to connect into our stack. Data integrity improved immediately.",
+      "The developer-friendly API and webhooks make it easy to integrate survey responses into our product. Real-time feedback loops have transformed our development process.",
     avatar: "https://randomuser.me/api/portraits/men/14.jpg",
   },
   {
     id: 15,
     name: "Rhea Kapoor",
-    designation: "Product Marketing",
+    designation: "Product Marketing Manager",
     company: "Launchly",
     testimonial:
-      "Evallo's messaging suggestions and conversation templates helped us iterate quickly and increase conversion on landing pages.",
+      "Evallo's AI generates survey templates based on our goals, then optimizes them for engagement. We've seen a 3x improvement in response quality.",
     avatar: "https://randomuser.me/api/portraits/women/15.jpg",
   },
   {
     id: 16,
     name: "Jonas Müller",
-    designation: "Enterprise Sales Director",
+    designation: "Enterprise Research Director",
     company: "B2Bify",
     testimonial:
-      "For enterprise deals, Evallo surfaces decision-makers faster and provides the context reps need. Deal sizes and win rates improved.",
+      "For enterprise surveys, Evallo handles complex stakeholder mapping and relationship analysis automatically. We're getting deeper insights than ever before.",
     avatar: "https://randomuser.me/api/portraits/men/16.jpg",
   },
 ];

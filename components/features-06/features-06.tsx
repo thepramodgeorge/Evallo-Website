@@ -5,10 +5,11 @@ import Link from "next/link";
 const features = [
   {
     category: "For Marketing & Sales Teams",
-    title: "Unlock the Language That Converts.",
+    title: "Unlock Language That Converts.",
     details:
       "Discover the exact words, pain points, and motivations that drive purchases. Craft messaging that resonates and close deals faster with real customer insights.",
     tutorialLink: "#",
+    imageUrl: "https://images.pexels.com/photos/6893801/pexels-photo-6893801.jpeg?_gl=1*10awilu*_ga*MTc5MjA1MDIxLjE3NjA2MTgxMTA.*_ga_8JE65Q40S6*czE3NjA4Njk3MzYkbzIkZzEkdDE3NjA4Njk4NjQkajMkbDAkaDA.",
   },
   {
     category: "For Customer Support Teams",
@@ -16,6 +17,7 @@ const features = [
     details:
       "Uncover the root causes behind support issues before they scale. Proactively improve customer experience and provide product teams with actionable feedback.",
     tutorialLink: "#",
+    imageUrl: "https://images.pexels.com/photos/4458421/pexels-photo-4458421.jpeg?_gl=1*1dxbvxf*_ga*MTc5MjA1MDIxLjE3NjA2MTgxMTA.*_ga_8JE65Q40S6*czE3NjA4Njk3MzYkbzIkZzEkdDE3NjA4NzA0MzgkajYwJGwwJGgw",
   },
   {
     category: "For Product Management Teams",
@@ -23,6 +25,7 @@ const features = [
     details:
       "Stop guessing. Use dynamic conversations to prioritize features users truly need and will love, reducing churn and driving adoption.",
     tutorialLink: "#",
+    imageUrl: "https://images.pexels.com/photos/3861945/pexels-photo-3861945.jpeg?_gl=1*ra9gm1*_ga*MTc5MjA1MDIxLjE3NjA2MTgxMTA.*_ga_8JE65Q40S6*czE3NjA4Njk3MzYkbzIkZzEkdDE3NjA4NzA1MzQkajI2JGwwJGgw",
   },
   {
     category: "For UX Researchers",
@@ -30,6 +33,7 @@ const features = [
     details:
       "Scale qualitative research without losing depth. Conduct hundreds of adaptive conversations to uncover the \"why\" behind user behavior.",
     tutorialLink: "#",
+    imageUrl: "https://images.pexels.com/photos/7889214/pexels-photo-7889214.jpeg?_gl=1*1ldtf9j*_ga*MTc5MjA1MDIxLjE3NjA2MTgxMTA.*_ga_8JE65Q40S6*czE3NjA4Njk3MzYkbzIkZzEkdDE3NjA4NzA4ODMkajYwJGwwJGgw",
   },
   {
     category: "For Founder Teams",
@@ -37,6 +41,7 @@ const features = [
     details:
       "Get a direct line to your customers' deepest needs. Make critical strategic decisions with the qualitative insights that shape winning companies.",
     tutorialLink: "#",
+    imageUrl: "https://images.pexels.com/photos/1015568/pexels-photo-1015568.jpeg?_gl=1*xksprs*_ga*MTc5MjA1MDIxLjE3NjA2MTgxMTA.*_ga_8JE65Q40S6*czE3NjA4Njk3MzYkbzIkZzEkdDE3NjA4NzEwODgkajI3JGwwJGgw",
   },
 ];
 
@@ -56,7 +61,15 @@ const Features06Page = () => {
               key={feature.category}
               className="flex flex-col md:flex-row items-center gap-x-12 gap-y-6 md:even:flex-row-reverse"
             >
-              <div className="w-full aspect-[4/3] bg-muted rounded-xl border border-border/50 basis-1/2" />
+              <div className="w-full aspect-[4/3] bg-muted rounded-xl border border-border/50 basis-1/2">
+                {feature.imageUrl && (
+                  <img
+                    src={feature.imageUrl}
+                    alt={feature.title}
+                    className="w-full h-full object-cover rounded-xl"
+                  />
+                )}
+              </div>
               <div className="basis-1/2 shrink-0">
                 <span className="uppercase font-medium text-sm text-muted-foreground">
                   {feature.category}
