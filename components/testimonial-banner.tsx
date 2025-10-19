@@ -20,8 +20,8 @@ const TestimonialBanner: React.FC<TestimonialBannerProps> = ({
   className = "",
 }) => {
   return (
-    <section className={`flex items-center justify-center py-6 px-6 ${className}`}>
-      <div className="max-w-(--breakpoint-xl) w-full mx-auto py-4">
+    <section className={`flex items-center justify-center py-12 px-6 ${className}`}>
+      <div className="max-w-(--breakpoint-lg) w-full mx-auto py-4">
         <Card className="w-full bg-muted text-foreground border-0 shadow-none">
           <CardContent className="space-y-6 text-left md:px-24 md:py-16">
             <blockquote className="text-xl sm:text-3xl font-semibold text-pretty text-left">

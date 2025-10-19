@@ -43,7 +43,7 @@ const features = [
 const Features06Page = () => {
   return (
     <div className="min-h-screen flex items-center justify-center">
-      <div className="max-w-(--breakpoint-lg) w-full py-10 px-6">
+      <div className="max-w-(--breakpoint-lg) w-full py-12 px-6">
         <h2 className="text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em]  text-pretty sm:mx-auto sm:text-center">
           From Data Points to &quot;Aha!&quot; Moments.
         </h2>
