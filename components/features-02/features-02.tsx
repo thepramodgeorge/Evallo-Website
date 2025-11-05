@@ -21,12 +21,18 @@ const Features02Page = () => {
           How It Works: Insight, Simplified.
         </h2>
         <div className="w-full mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="flex flex-col text-start w-full"
-            >
-              <div className="mb-5 sm:mb-6 w-full aspect-4/5 bg-muted rounded-xl" />
+          {features.map((feature, idx) => (
+            <div key={feature.title} className="flex flex-col text-start w-full">
+              <video
+                className="mb-5 sm:mb-6 w-full aspect-16/10 object-cover rounded-xl shadow-xl"
+                src={`/Evallo Demo Video ${idx + 1}.mp4`}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                aria-hidden="true"
+              />
               <span className="text-2xl font-semibold tracking-tight">
                 {feature.title}
               </span>
