@@ -1,3 +1,5 @@
+"use client";
+
 const features = [
   {
     title: "Define Your Goal",
