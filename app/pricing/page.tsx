@@ -8,46 +8,59 @@ import { cn } from "@/lib/utils";
 import { CircleCheck } from "lucide-react";
 import { useState } from "react";
 
-const YEARLY_DISCOUNT = 20;
+// pricing config
 const plans = [
   {
     name: "Starter",
-    price: 29,
-    description: "For Hobbyists. 500 survey responses per month",
+    priceMonthly: 29,
+    priceYearly: 290,
+    description: "Best for individuals or small teams",
     features: [
-      { title: "10 Surveys" },
-      { title: "Core AI analysis & reporting" },
-      { title: "Web & email deployment" }
+      { title: "3 Evallos Total" },
+      { title: "500 responses per month" },
+      { title: "10 report generations per month" },
+      { title: "Download list of responses (CSV or PDF)" },
+      { title: "Customize your Chat UI" },
+      { title: "Basic insights dashboard" },
+      { title: "Remove Branding" },
     ],
     buttonText: "Start 7-Day Free Trial",
   },
   {
-    name: "Pro",
-    price: 79,
-    isRecommended: true,
-    description: "For Teams. 2,500 survey responses per month",
+    name: "Lifetime Deal",
+    priceOneTime: 499,
+    description: "One-time purchase — lifetime access",
     features: [
-      { title: "100 Surveys" },
-      { title: "Advanced AI analysis & sentiment tracking" },
-      { title: "Custom branding & white-labeling" }
+      { title: "100 Evallos Total" },
+      { title: "10000 responses per month" },
+      { title: "30 report generations per month" },
+      { title: "Download list of responses (CSV or PDF)" },
+      { title: "Customize your Chat UI" },
+      { title: "Basic insights dashboard" },
+      { title: "Remove Branding" },
     ],
-    buttonText: "Start 7-Day Free Trial",
+    buttonText: "Get Lifetime Deal",
     isPopular: true,
   },
   {
-    name: "Scale",
-    price: 199,
-    description: "For Enterprises. 10,000 survey responses per month",
+    name: "Pro",
+    priceMonthly: 59,
+    priceYearly: 590,
+    description: "For power users and growing teams",
     features: [
-      { title: "Unlimited Surveys" },
-      { title: "Priority support & setup" },
-      { title: "Dedicated success manager" }
+      { title: "50 Evallos Total" },
+      { title: "1000 responses per month" },
+      { title: "20 report generations per month" },
+      { title: "Download list of responses (CSV or PDF)" },
+      { title: "Customize your Chat UI" },
+      { title: "Basic insights dashboard" },
     ],
-    buttonText: "Start 7-Day Free Trial",
+    buttonText: "Coming Soon",
+    disabled: true,
   },
 ];
 
-const Pricing03 = () => {
+const Pricing03 = ({ maxWidthClass = "max-w-(--breakpoint-lg)" }: { maxWidthClass?: string }) => {
   const [selectedBillingPeriod, setSelectedBillingPeriod] = useState("monthly");
 
   return (
@@ -71,16 +84,17 @@ const Pricing03 = () => {
             value="yearly"
             className="rounded-full data-[state=active]:shadow-none px-4"
           >
-            Yearly (Save {YEARLY_DISCOUNT}%)
+            Yearly
           </TabsTrigger>
         </TabsList>
       </Tabs>
-  <div className="mt-12 max-w-(--breakpoint-lg) w-full mx-auto grid grid-cols-1 lg:grid-cols-3 items-start gap-8">
+  <div className={`mt-12 ${maxWidthClass} w-full mx-auto grid grid-cols-1 lg:grid-cols-3 items-start gap-8`}>
         {plans.map((plan) => (
           <div
             key={plan.name}
             className={cn("relative border rounded-xl p-6", {
               "border-2 border-primary py-10": plan.isPopular,
+              "opacity-50": plan.disabled,
             })}
           >
             {plan.isPopular && (
@@ -90,12 +104,9 @@ const Pricing03 = () => {
             )}
             <h3 className="text-lg font-medium">{plan.name}</h3>
             <p className="mt-2 text-4xl font-bold">
-              $
-              {selectedBillingPeriod === "monthly"
-                ? plan.price
-                : Math.ceil(plan.price * ((100 - YEARLY_DISCOUNT) / 100))}
+              ${plan.priceOneTime ? plan.priceOneTime : (selectedBillingPeriod === "monthly" ? plan.priceMonthly : plan.priceYearly)}
               <span className="ml-1.5 text-sm text-muted-foreground font-normal">
-                /month
+                {plan.priceOneTime ? "one-time" : (selectedBillingPeriod === "monthly" ? "/month" : "/year")}
               </span>
             </p>
             <p className="mt-4 font-medium text-muted-foreground">
@@ -112,7 +123,8 @@ const Pricing03 = () => {
             <Button
               variant={plan.isPopular ? "default" : "outline"}
               size="lg"
-              className="w-full mt-6 rounded-full"
+              className={cn("w-full mt-6 rounded-full", { "opacity-50 cursor-not-allowed": plan.disabled })}
+              disabled={plan.disabled}
             >
               {plan.buttonText}
             </Button>
@@ -120,7 +132,10 @@ const Pricing03 = () => {
             <ul className="space-y-2">
               {plan.features.map((feature) => (
                 <li key={feature.title} className="flex items-start gap-1.5">
-                  <CircleCheck className="h-4 w-4 mt-1 text-green-600" />
+                  <CircleCheck className={cn("h-4 w-4 mt-1", {
+                    "text-green-600": !plan.disabled,
+                    "text-gray-400": plan.disabled,
+                  })} />
                   {feature.title}
                 </li>
               ))}

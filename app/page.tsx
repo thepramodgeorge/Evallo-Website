@@ -27,7 +27,7 @@ export default function Home() {
     <HowItWorksSection />
     <Testimonial04 />
     {/*<Features07 />*/}
-    <Pricing03 />
+  <Pricing03 maxWidthClass="max-w-7xl" />
     <TestimonialBanner 
       quote="We replaced SurveyMonkey with Evallo. Our survey completion rates increased by 40%, and we get richer insights from every response."
       author="Sarah L"
