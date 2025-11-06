@@ -17,7 +17,7 @@ const features = [
     icon: Lock,
     title: "Rigid & Dumb",
     description:
-      "Questions can&apos;t adapt to interesting answers in real-time.",
+      "Questions can't adapt to interesting answers in real-time.",
   },
   {
     icon: UserX,
