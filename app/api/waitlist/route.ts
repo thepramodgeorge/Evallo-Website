@@ -25,7 +25,7 @@ export async function POST(request: Request) {
     const supabase = getSupabaseClient();
 
     // Insert into waitlist table
-    const { data, error } = await supabase
+    const { error } = await supabase
       .from('waitlist')
       .insert([
         { name, email }

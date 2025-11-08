@@ -6,14 +6,12 @@ import {
   NavbarLogo,
   NavBody,
   NavItems,
-  NavbarButton,
   MobileNav,
   MobileNavHeader,
   MobileNavMenu,
   MobileNavToggle,
 } from "@/components/ui/resizable-navbar"
 import { SignInDialog } from "@/components/signin-dialog"
-import { Button } from "@/components/ui/button"
 
 export default function NavbarWrapper() {
   const [isOpen, setIsOpen] = useState(false)

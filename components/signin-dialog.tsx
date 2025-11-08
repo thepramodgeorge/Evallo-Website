@@ -51,7 +51,7 @@ export function SignInDialog({ open, onOpenChange }: SignInDialogProps) {
         onOpenChange(false);
         setSubmitSuccess(false);
       }, 2000);
-    } catch (err) {
+    } catch (_err) {
       setError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
@@ -64,14 +64,14 @@ export function SignInDialog({ open, onOpenChange }: SignInDialogProps) {
         <DialogHeader>
           <DialogTitle>Join the Waitlist</DialogTitle>
           <DialogDescription>
-            Access to Evallo Version 3 is currently invite-only. Enter your details below and we'll notify you when we're ready to welcome you.
+            Access to Evallo Version 3 is currently invite-only. Enter your details below and we&apos;ll notify you when we&apos;re ready to welcome you.
           </DialogDescription>
         </DialogHeader>
 
         {submitSuccess ? (
           <div className="py-6 text-center">
             <p className="text-green-600 font-medium">
-              Thank you! We'll be in touch soon.
+              Thank you! We&apos;ll be in touch soon.
             </p>
           </div>
         ) : (
