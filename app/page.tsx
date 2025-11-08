@@ -24,7 +24,7 @@ export default function Home() {
     <Features04Page />
     {/* <Features05Page />*/}
     <Features06Page />
-    <HowItWorksSection />
+    <HowItWorksSection id="how-it-works" />
     <Testimonial04 />
     {/*<Features07 />*/}
   <Pricing03 maxWidthClass="max-w-7xl" />

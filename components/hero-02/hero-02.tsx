@@ -1,3 +1,5 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
@@ -44,8 +46,13 @@ const Hero02 = () => {
               Traditional surveys ask the same questions to everyone. Evallo asks the right questions to each person, uncovering deeper insights. No logic trees, no setup pain - Deploy in minutes.
             </p>
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 sm:gap-4">
-              <Button size="lg" className="rounded-full text-base w-full sm:w-auto" asChild>
-                <Link href="https://pramodgeorge.com/meet">Request a Demo <ArrowUpRight className="h-5! w-5!" /></Link>
+              <Button size="lg" className="rounded-full text-base w-full sm:w-auto" onClick={() => {
+                const element = document.getElementById('how-it-works');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}>
+                Request a Demo <ArrowUpRight className="h-5! w-5!" />
               </Button>
               <Button
                 variant="outline"
@@ -53,7 +60,7 @@ const Hero02 = () => {
                 className="rounded-full text-base shadow-none w-full sm:w-auto"
                 asChild
               >
-                <Link href="https://discord.gg/K32YGWADZW"><CirclePlay className="h-5! w-5!" /> Join Discord</Link>
+                <Link href="https://discord.gg/K32YGWADZW" target="_blank" rel="noopener noreferrer"><CirclePlay className="h-5! w-5!" /> Join Discord</Link>
               </Button>
             </div>
           </div>

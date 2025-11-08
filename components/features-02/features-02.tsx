@@ -15,9 +15,9 @@ const features = [
   },
 ];
 
-const Features02Page = () => {
+const Features02Page = ({ id }: { id?: string }) => {
   return (
-    <div className="min-h-screen flex items-center justify-center py-12 px-6">
+    <div id={id} className="min-h-screen flex items-center justify-center py-12 px-6">
       <div className="grow w-full sm:max-w-(--breakpoint-md) lg:max-w-(--breakpoint-lg)">
         <h2 className="text-4xl sm:text-5xl font-semibold tracking-tight">
           How It Works: Insight, Simplified.
@@ -34,6 +34,7 @@ const Features02Page = () => {
                 playsInline
                 preload="metadata"
                 aria-hidden="true"
+                suppressHydrationWarning
               />
               <span className="text-2xl font-semibold tracking-tight">
                 {feature.title}

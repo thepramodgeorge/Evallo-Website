@@ -12,9 +12,12 @@ import {
   MobileNavMenu,
   MobileNavToggle,
 } from "@/components/ui/resizable-navbar"
+import { SignInDialog } from "@/components/signin-dialog"
+import { Button } from "@/components/ui/button"
 
 export default function NavbarWrapper() {
   const [isOpen, setIsOpen] = useState(false)
+  const [dialogOpen, setDialogOpen] = useState(false)
 
   const items = [
     { name: "Home", link: "/" },
@@ -28,10 +31,16 @@ export default function NavbarWrapper() {
         <NavItems items={items} onItemClick={() => setIsOpen(false)} />
 
         {/* Desktop sign in button (hidden on small screens) */}
-        <div className="ml-auto hidden lg:block">
-          <NavbarButton href="/login" variant="primary">
+        <div className="ml-auto hidden lg:block relative z-50">
+          <button 
+            onClick={() => {
+              console.log('Sign in button clicked');
+              setDialogOpen(true);
+            }}
+            className="px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium cursor-pointer relative z-50"
+          >
             Sign in
-          </NavbarButton>
+          </button>
         </div>
 
         {/* Mobile toggle (visible only on small screens) */}
@@ -66,18 +75,23 @@ export default function NavbarWrapper() {
               </a>
             ))}
 
-            <div className="w-full pt-2">
-              <NavbarButton
-                href="/login"
-                variant="primary"
-                onClick={() => setIsOpen(false)}
+            <div className="w-full pt-2 relative z-50">
+              <button
+                onClick={() => {
+                  console.log('Mobile sign in button clicked');
+                  setIsOpen(false);
+                  setDialogOpen(true);
+                }}
+                className="w-full px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium cursor-pointer relative z-50"
               >
                 Sign in
-              </NavbarButton>
+              </button>
             </div>
           </div>
         </MobileNavMenu>
       </MobileNav>
+
+      <SignInDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </Navbar>
   )
 }
