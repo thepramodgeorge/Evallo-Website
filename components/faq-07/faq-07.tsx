@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Accordion,
   AccordionContent,
@@ -7,6 +9,8 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Accordion as AccordionPrimitive } from "radix-ui";
 import { PlusIcon } from "lucide-react";
+import { useState } from "react";
+import { SignInDialog } from "@/components/signin-dialog";
 
 const faq = [
   {
@@ -47,6 +51,7 @@ const faq = [
 ];
 
 const FAQ07 = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
   return (
     <section className="flex items-center justify-center py-12 px-6">
       <div className="max-w-2xl w-full mx-auto py-8">
@@ -88,11 +93,12 @@ const FAQ07 = () => {
         </Accordion>
         {/* CTA at end of section */}
         <div className="mt-8 flex justify-center">
-          <Button asChild size="lg" className="rounded-full">
-            <a href="#">Create Your First Evallo in 2 mins</a>
+          <Button size="lg" className="rounded-full cursor-pointer" onClick={() => setDialogOpen(true)}>
+            Create Your First Evallo in 2 mins
           </Button>
         </div>
       </div>
+      <SignInDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </section>
   );
 };

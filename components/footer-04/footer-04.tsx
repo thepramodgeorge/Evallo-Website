@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
@@ -8,6 +10,8 @@ import {
   TwitterIcon,
 } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
+import { SignInDialog } from "@/components/signin-dialog";
 
 const footerLinks = [
   {
@@ -37,6 +41,7 @@ const footerLinks = [
 ];
 
 const Footer04Page = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
   return (
     <div className="flex flex-col">
       <footer className="border-t">
@@ -68,9 +73,9 @@ const Footer04Page = () => {
             {/* Subscribe Newsletter */}
             <div className="max-w-xs w-full">
               <h6 className="font-medium">Stay up to date</h6>
-              <form className="mt-6 flex items-center gap-2">
+              <form className="mt-6 flex items-center gap-2" onSubmit={(e) => e.preventDefault()}>
                 <Input type="email" placeholder="Enter your email" />
-                <Button size="lg" className="rounded-full">Subscribe</Button>
+                <Button size="lg" className="rounded-full cursor-pointer" onClick={() => setDialogOpen(true)}>Subscribe</Button>
               </form>
             </div>
           </div>
@@ -102,6 +107,7 @@ const Footer04Page = () => {
           </div>
         </div>
       </footer>
+      <SignInDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import { CircleCheck } from "lucide-react";
 import { useState } from "react";
+import { SignInDialog } from "@/components/signin-dialog";
 
 // pricing config
 const plans = [
@@ -62,6 +63,7 @@ const plans = [
 
 const Pricing03 = ({ maxWidthClass = "max-w-(--breakpoint-lg)" }: { maxWidthClass?: string }) => {
   const [selectedBillingPeriod, setSelectedBillingPeriod] = useState("monthly");
+  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <section className="flex flex-col items-center justify-center py-12 px-6">
@@ -123,8 +125,9 @@ const Pricing03 = ({ maxWidthClass = "max-w-(--breakpoint-lg)" }: { maxWidthClas
             <Button
               variant={plan.isPopular ? "default" : "outline"}
               size="lg"
-              className={cn("w-full mt-6 rounded-full", { "opacity-50 cursor-not-allowed": plan.disabled })}
+              className={cn("w-full mt-6 rounded-full", { "opacity-50 cursor-not-allowed": plan.disabled, "cursor-pointer": !plan.disabled })}
               disabled={plan.disabled}
+              onClick={() => !plan.disabled && setDialogOpen(true)}
             >
               {plan.buttonText}
             </Button>
@@ -143,6 +146,7 @@ const Pricing03 = ({ maxWidthClass = "max-w-(--breakpoint-lg)" }: { maxWidthClas
           </div>
         ))}
       </div>
+      <SignInDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </section>
   );
 };

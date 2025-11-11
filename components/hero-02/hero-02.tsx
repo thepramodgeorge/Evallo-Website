@@ -4,14 +4,16 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import AvatarGroup5 from "@/components/avatargroups5";
 import { cn } from "@/lib/utils";
 import { GridPattern } from "@/components/ui/shadcn-io/grid-pattern";
 import { Logo01, Logo02, Logo03, Logo04, Logo05, Logo06 } from "@/components/logos-06/logos";
 import { Marquee } from "@/components/ui/marquee";
+import { SignInDialog } from "@/components/signin-dialog";
 
 const Hero02 = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-(--breakpoint-xl) w-full mx-auto px-6 py-12 flex flex-col gap-12">
@@ -46,12 +48,7 @@ const Hero02 = () => {
               Traditional surveys ask the same questions to everyone. Evallo asks the right questions to each person, uncovering deeper insights. No logic trees, no setup pain - Deploy in minutes.
             </p>
             <div className="mt-12 flex flex-col sm:flex-row items-center justify-center sm:justify-start gap-3 sm:gap-4">
-              <Button size="lg" className="rounded-full text-base w-full sm:w-auto" onClick={() => {
-                const element = document.getElementById('how-it-works');
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}>
+              <Button size="lg" className="rounded-full text-base w-full sm:w-auto cursor-pointer" onClick={() => setDialogOpen(true)}>
                 Request a Demo <ArrowUpRight className="h-5! w-5!" />
               </Button>
               <Button
@@ -89,6 +86,7 @@ const Hero02 = () => {
           </div>
         </div>
       </div>
+      <SignInDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </div>
   );
 };

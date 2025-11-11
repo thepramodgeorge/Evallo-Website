@@ -1,6 +1,9 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { useState } from "react";
+import { SignInDialog } from "@/components/signin-dialog";
 
 const features = [
   {
@@ -46,6 +49,7 @@ const features = [
 ];
 
 const Features06Page = () => {
+  const [dialogOpen, setDialogOpen] = useState(false);
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-(--breakpoint-lg) w-full py-12 px-6">
@@ -78,16 +82,15 @@ const Features06Page = () => {
                   {feature.title}
                 </h4>
                 <p className="text-muted-foreground">{feature.details}</p>
-                <Button asChild size="lg" className="mt-6 rounded-full gap-3">
-                  <Link href={feature.tutorialLink}>
-                    Start Building <ArrowRight />
-                  </Link>
+                <Button size="lg" className="mt-6 rounded-full gap-3 cursor-pointer" onClick={() => setDialogOpen(true)}>
+                  Start Building <ArrowRight />
                 </Button>
               </div>
             </div>
           ))}
         </div>
       </div>
+      <SignInDialog open={dialogOpen} onOpenChange={setDialogOpen} />
     </div>
   );
 };
