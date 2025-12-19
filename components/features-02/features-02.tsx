@@ -27,7 +27,12 @@ const Features02Page = ({ id }: { id?: string }) => {
             <div key={feature.title} className="flex flex-col text-start w-full">
               <video
                 className="mb-5 sm:mb-6 w-full aspect-16/10 object-cover rounded-xl shadow-xl"
-                src={`/Evallo Demo Video ${idx + 1}.mp4`}
+                src={
+                  idx === 0 ? "https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSc17GxFkfTpkoZr7YHS9WJDwPjN582Itdby3R" :
+                  idx === 1 ? "https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSkrcUb84GEuMlDXjSdhq6O2emfA5TFyZCigBk" :
+                  idx === 2 ? "https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSHIAXdSMuxDatYrVP0L2B6GIQUiJmEjC8FRZk" :
+                  `/Evallo Demo Video ${idx + 1}.mp4`
+                }
                 autoPlay
                 loop
                 muted
