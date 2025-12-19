@@ -62,7 +62,7 @@ const Hero02 = () => {
             </div>
           </div>
           <img
-            src="https://evallo.app/wp-content/uploads/2025/07/Evallo-Hero-Image-1-1024x1024.webp"
+            src="/Evallo-Hero-Image-1-1024x1024.webp"
             alt="Evallo hero"
             className="w-full h-auto block relative z-10"
           />
