@@ -4,12 +4,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function AvatarGroup5() {
   const users = [
-    { name: "Olivia Rhye", image: "https://untitledui.com/images/avatars/transparent/olivia-rhye" },
-    { name: "Phoenix Baker", image: "https://untitledui.com/images/avatars/transparent/phoenix-baker" },
-    { name: "Lana Steiner", image: "https://untitledui.com/images/avatars/transparent/lana-steiner" },
-    { name: "Natali Craig", image: "https://untitledui.com/images/avatars/transparent/natali-craig" },
-    { name: "Ava Wright", image: "https://untitledui.com/images/avatars/transparent/ava-wright" },
-    { name: "Zaid Schwartz", image: "https://untitledui.com/images/avatars/transparent/zaid-schwartz" },
+    { name: "Olivia Rhye", image: "https://randomuser.me/api/portraits/women/14.jpg" },
+    { name: "Phoenix Baker", image: "https://randomuser.me/api/portraits/men/13.jpg" },
+    { name: "Lana Steiner", image: "https://randomuser.me/api/portraits/women/16.jpg" },
+    { name: "Natali Craig", image: "https://randomuser.me/api/portraits/men/23.jpg" },
+    { name: "Ava Wright", image: "https://randomuser.me/api/portraits/women/18.jpg" },
+    { name: "Zaid Schwartz", image: "https://randomuser.me/api/portraits/men/19.jpg" },
     { name: "Additional Users", count: 3 },
   ];
 
