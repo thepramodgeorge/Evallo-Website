@@ -1,5 +1,9 @@
 "use client";
 
+import dynamic from "next/dynamic";
+
+const VideoComponent = dynamic(() => import("./VideoComponent"), { ssr: false });
+
 const features = [
   {
     title: "Define Your Goal",
@@ -25,21 +29,9 @@ const Features02Page = ({ id }: { id?: string }) => {
         <div className="w-full mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
           {features.map((feature, idx) => (
             <div key={feature.title} className="flex flex-col text-start w-full">
-              <video
+              <VideoComponent
                 className="mb-5 sm:mb-6 w-full aspect-16/10 object-cover rounded-xl shadow-xl"
-                src={
-                  idx === 0 ? "https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSc17GxFkfTpkoZr7YHS9WJDwPjN582Itdby3R" :
-                  idx === 1 ? "https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSkrcUb84GEuMlDXjSdhq6O2emfA5TFyZCigBk" :
-                  idx === 2 ? "https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSHIAXdSMuxDatYrVP0L2B6GIQUiJmEjC8FRZk" :
-                  `/Evallo Demo Video ${idx + 1}.mp4`
-                }
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                aria-hidden="true"
-                suppressHydrationWarning
+                src={`/Evallo Demo Video ${idx + 1}.mp4`}
               />
               <span className="text-2xl font-semibold tracking-tight">
                 {feature.title}
