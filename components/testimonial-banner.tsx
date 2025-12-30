@@ -16,7 +16,7 @@ const TestimonialBanner: React.FC<TestimonialBannerProps> = ({
   quote = '“Evallo helped us collect 3x more detailed survey responses and reduce completion time by 50% — the AI-powered questions are a game-changer for gathering insights.”',
   author = "Arjun Patel",
   role = "Head of Growth, Brightlane",
-  avatarSrc = "https://evallo.app/wp-content/uploads/2025/07/Janardhan-300x300.png",
+  avatarSrc = "https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSHe860sMuxDatYrVP0L2B6GIQUiJmEjC8FRZk",
   className = "",
 }) => {
   return (
