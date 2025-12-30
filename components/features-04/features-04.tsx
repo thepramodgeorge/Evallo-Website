@@ -38,7 +38,7 @@ const Features04Page = () => {
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-(--breakpoint-lg) w-full py-12 px-6">
         <h2 className="text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em]">
-          Static Surveys Are Killing&apos; Your Insights.
+          Static Surveys Are Killing Your Insights.
         </h2>
         <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
           Traditional survey tools are broken. You spend hours building complex logic flows, only to get a 2% completion rate and shallow data that doesn&apos;t tell you why.

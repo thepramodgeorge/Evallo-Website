@@ -1,7 +1,10 @@
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Hero from "@/components/hero";
 import TestimonialBanner from "@/components/testimonial-banner";
+import Features04Page from "@/components/features-04/features-04";
 import Testimonial04 from "@/components/testimonial-04/testimonial-04";
+import Features05Page from "@/components/features-05/features-05";
+import Features03 from "@/components/features-03/features-03";
 
 export default function VsTypeformPage() {
   return (
@@ -12,8 +15,11 @@ export default function VsTypeformPage() {
       {/* Individual Testimonial */}
       <TestimonialBanner avatarSrc="https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSHe860sMuxDatYrVP0L2B6GIQUiJmEjC8FRZk" />
 
-      {/* Section 2: Pain Point */}
-      <PainPointSection />
+      {/* Features Section */}
+      <Features04Page />
+
+      {/* Aha Moments Section */}
+      <Features05Page />
 
       {/* Section 3: Comparison Table */}
       <ComparisonTableSection />
@@ -21,30 +27,15 @@ export default function VsTypeformPage() {
       {/* Section 4: Feature Showdown */}
       <FeatureShowdownSection />
 
-      {/* Section 5: Testimonial */}
+      {/* Section 5: Features 03 */}
+      <Features03 />
+
+      {/* Section 6: Testimonial */}
       <Testimonial04 />
 
       {/* Section 6: FAQ */}
       <FAQSection />
     </div>
-  );
-}
-
-function PainPointSection() {
-  return (
-    <section className="py-24 px-6">
-      <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight">
-          Why &quot;Static&quot; Surveys Are Costing You Insights
-        </h2>
-        <p className="mt-6 text-xl text-muted-foreground">
-          Traditional forms are rigid. If a user gives a fascinating answer to question #3, Typeform just moves to question #4. You miss the &quot;Why.&quot;
-        </p>
-        <p className="mt-4 text-lg">
-          The Evallo Difference: Our AI listens. It asks the follow-up question you would have asked if you were there in person.
-        </p>
-      </div>
-    </section>
   );
 }
 
@@ -59,7 +50,7 @@ function ComparisonTableSection() {
 
   return (
     <section className="py-24 px-6">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-(--breakpoint-lg) mx-auto">
         <h2 className="text-4xl md:text-5xl font-semibold text-center tracking-tight mb-12">
           Evallo vs. Typeform: At a Glance
         </h2>

@@ -6,7 +6,7 @@ import React, { ComponentProps } from "react";
 const testimonials = [
   {
     id: 1,
-    name: "Arjun Patel",
+    name: "James Anderson",
     designation: "Head of Research",
     company: "Brightlane",
     testimonial:

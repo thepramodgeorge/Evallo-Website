@@ -55,7 +55,7 @@ const Features05Page = () => {
           From Data Points to &quot;Aha!&quot; Moments.
         </h2>
         <p className="mt-2 text-muted-foreground text-lg sm:text-xl">
-          Imagine a research assistant that never sleeps. You tell it what you need to learn, and it conducts a natural, adaptive conversation with every single customer, digging for the golden nuggets of insight you would have otherwise missed.
+          Traditional forms are rigid. If a user gives a fascinating answer to question #3, Typeform just moves to question #4. You miss the &quot;Why.&quot; The Evallo Difference? Our AI listens. It asks the follow-up question you would have asked if you were there in person.
         </p>
         <div className="mt-10 w-full mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
           {features.map((feature) => (
