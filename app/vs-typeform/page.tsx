@@ -7,6 +7,7 @@ import Features05Page from "@/components/features-05/features-05";
 import Features03 from "@/components/features-03/features-03";
 import Pricing03 from "@/app/pricing/page";
 import HowItWorksSection from "@/components/features-02/features-02";
+import Footer from "@/components/footer";
 
 export default function VsTypeformPage() {
   return (
@@ -40,6 +41,7 @@ export default function VsTypeformPage() {
 
       {/* Section 6: FAQ */}
       <FAQSection />
+      <Footer />
     </div>
   );
 }

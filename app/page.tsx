@@ -6,6 +6,7 @@ import FAQ07 from "@/components/faq-07"
 import Testimonial04 from "@/components/testimonial-04/testimonial-04"
 import TestimonialBanner from "@/components/testimonial-banner"
 import Footer04Page from "@/components/footer-04/footer-04"
+import Footer from "@/components/footer"
 import { Marquee } from "@/components/ui/marquee"
 import Features04Page from "@/components/features-04/features-04"
 import Features05Page from "@/components/features-05/features-05"
@@ -35,7 +36,7 @@ export default function Home() {
       avatarSrc="https://randomuser.me/api/portraits/women/81.jpg"
     />
     <FAQ07 />
-    <Footer04Page />
+    <Footer />
     </>
   )
 }
