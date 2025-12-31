@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://evallo.app/sitemap.xml

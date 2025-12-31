@@ -102,7 +102,7 @@ const Features03 = () => {
                 <div className="flex items-start gap-3">
                   <Blocks className="shrink-0" />
                   <p className="-mt-0.5">
-                    Get the "why" from 1,000 people simultaneously.
+                    Get the &ldquo;why&rdquo; from 1,000 people simultaneously.
                   </p>
                 </div>
               </li>
