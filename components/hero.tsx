@@ -22,7 +22,7 @@ export default function Hero() {
           Stop Building Logic Trees. Start Having Conversations.
         </h1>
         <p className="mt-6 md:text-lg text-foreground/80">
-          Typeform makes you play architect with complex branching logic. Evallo uses AI to conduct adaptive interviews that dig deeper—without the setup headache.
+          Typeform makes you play architect with complex branching logic. Evallo uses AI to conduct adaptive interviews that dig deeper, without the setup headache.
         </p>
         <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
           <Button size="lg" className="rounded-full text-base w-full sm:w-auto">

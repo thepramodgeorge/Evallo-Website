@@ -6,6 +6,7 @@ import Testimonial04 from "@/components/testimonial-04/testimonial-04";
 import Features05Page from "@/components/features-05/features-05";
 import Features03 from "@/components/features-03/features-03";
 import Pricing03 from "@/app/pricing/page";
+import HowItWorksSection from "@/components/features-02/features-02";
 
 export default function VsTypeformPage() {
   return (
@@ -22,11 +23,11 @@ export default function VsTypeformPage() {
       {/* Aha Moments Section */}
       <Features05Page />
 
+      {/* How It Works Section */}
+      <HowItWorksSection id="how-it-works" />
+
       {/* Section 3: Comparison Table */}
       <ComparisonTableSection />
-
-      {/* Section 4: Feature Showdown */}
-      <FeatureShowdownSection />
 
       {/* Section 5: Features 03 */}
       <Features03 />
@@ -76,23 +77,6 @@ function ComparisonTableSection() {
             ))}
           </TableBody>
         </Table>
-      </div>
-    </section>
-  );
-}
-
-function FeatureShowdownSection() {
-  return (
-    <section className="py-24 px-6">
-      <div className="max-w-4xl w-full mx-auto">
-        <h3 className="text-3xl font-semibold mb-6">Goodbye, Logic Map Spaghetti.</h3>
-        <p className="text-lg text-muted-foreground mb-12">
-          Building a 20-path logic tree in Typeform is a nightmare. With Evallo, you just describe your goal in plain English. Our AI handles the rest.
-        </p>
-        <h3 className="text-3xl font-semibold mb-6">Qualitative Depth at Quantitative Scale.</h3>
-        <p className="text-lg text-muted-foreground">
-          Evallo bridges the gap between a shallow survey and a 30-minute Zoom interview. Get the &quot;why&quot; from 1,000 people simultaneously.
-        </p>
       </div>
     </section>
   );
