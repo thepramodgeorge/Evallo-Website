@@ -27,7 +27,7 @@ export default function Hero() {
         </div>
         <div className="w-full aspect-video lg:aspect-auto lg:w-[1000px] lg:h-screen bg-accent rounded-xl lg:rounded-none">
           <img
-            src="/web_images_pvt/Pramod George Hero section WEBSITE IMAGE.webp"
+            src="/Pramod%20George%20Hero%20section%20WEBSITE%20IMAGE.webp"
             alt="Pramod George Hero Image"
             className="w-full h-full object-cover rounded-xl lg:rounded-none"
           />
