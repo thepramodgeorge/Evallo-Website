@@ -3,7 +3,7 @@ import { ArrowRight, Blocks, Settings2 } from "lucide-react";
 
 const Features03 = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center w-full">
       <div className="w-full max-w-(--breakpoint-lg) mx-auto py-12 px-6">
         <h2 className="text-3xl leading-10 sm:text-4xl md:text-[40px] md:leading-13 font-semibold tracking-tight">
           Design and Engage: <br />

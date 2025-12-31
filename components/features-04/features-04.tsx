@@ -35,7 +35,7 @@ const features = [
 
 const Features04Page = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="min-h-screen flex items-center justify-center w-full">
       <div className="max-w-(--breakpoint-lg) w-full py-12 px-6">
         <h2 className="text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em]">
           Static Surveys Are Killing Your Insights.

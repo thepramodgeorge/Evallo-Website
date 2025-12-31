@@ -5,10 +5,11 @@ import Features04Page from "@/components/features-04/features-04";
 import Testimonial04 from "@/components/testimonial-04/testimonial-04";
 import Features05Page from "@/components/features-05/features-05";
 import Features03 from "@/components/features-03/features-03";
+import Pricing03 from "@/app/pricing/page";
 
 export default function VsTypeformPage() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       {/* Section 1: Hero */}
       <Hero />
 
@@ -33,6 +34,9 @@ export default function VsTypeformPage() {
       {/* Section 6: Testimonial */}
       <Testimonial04 />
 
+      {/* Pricing Section */}
+      <Pricing03 maxWidthClass="max-w-7xl" />
+
       {/* Section 6: FAQ */}
       <FAQSection />
     </div>
@@ -50,7 +54,7 @@ function ComparisonTableSection() {
 
   return (
     <section className="py-24 px-6">
-      <div className="max-w-(--breakpoint-lg) mx-auto">
+      <div className="max-w-(--breakpoint-lg) w-full mx-auto">
         <h2 className="text-4xl md:text-5xl font-semibold text-center tracking-tight mb-12">
           Evallo vs. Typeform: At a Glance
         </h2>
@@ -80,7 +84,7 @@ function ComparisonTableSection() {
 function FeatureShowdownSection() {
   return (
     <section className="py-24 px-6">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl w-full mx-auto">
         <h3 className="text-3xl font-semibold mb-6">Goodbye, Logic Map Spaghetti.</h3>
         <p className="text-lg text-muted-foreground mb-12">
           Building a 20-path logic tree in Typeform is a nightmare. With Evallo, you just describe your goal in plain English. Our AI handles the rest.
