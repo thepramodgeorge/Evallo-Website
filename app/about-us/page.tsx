@@ -1,4 +1,5 @@
-import Hero from "@/components/hero";
+import Hero from "@/components/hero-about";
+import TestimonialBanner from "@/components/testimonial-banner";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,6 +11,7 @@ export default function AboutUsPage() {
   return (
     <main>
       <Hero />
+      <TestimonialBanner />
     </main>
   );
 }
