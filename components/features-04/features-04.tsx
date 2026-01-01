@@ -33,15 +33,25 @@ const features = [
   },
 ];
 
-const Features04Page = () => {
+interface Features04Props {
+  title?: string;
+  description?: string;
+  imageAlt?: string;
+}
+
+const Features04Page = ({
+  title = "Static Surveys Are Killing Your Insights.",
+  description = "Traditional survey tools are broken. You spend hours building complex logic flows, only to get a 2% completion rate and shallow data that doesn't tell you why.",
+  imageAlt = "Comparison between complex Typeform logic trees and simple Evallo AI flows"
+}: Features04Props) => {
   return (
     <div className="min-h-screen flex items-center justify-center w-full">
       <div className="max-w-(--breakpoint-lg) w-full py-12 px-6">
         <h2 className="text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em]">
-          Static Surveys Are Killing Your Insights.
+          {title}
         </h2>
         <p className="text-lg text-muted-foreground mt-4 leading-relaxed">
-          Traditional survey tools are broken. You spend hours building complex logic flows, only to get a 2% completion rate and shallow data that doesn&apos;t tell you why.
+          {description}
         </p>
         <div className="mt-6 md:mt-10 w-full mx-auto grid md:grid-cols-2 gap-12 items-stretch">
           <div className="h-full">
@@ -62,7 +72,7 @@ const Features04Page = () => {
           <div className="hidden md:flex w-full relative overflow-hidden self-stretch items-center justify-center bg-muted">
             <Image
               src="/typeform-logic-tree-complexity.webp"
-              alt="Comparison between complex Typeform logic trees and simple Evallo AI flows"
+              alt={imageAlt}
               width={1600}
               height={1000}
               style={{ height: '100%', width: 'auto' }}

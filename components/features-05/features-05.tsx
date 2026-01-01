@@ -47,7 +47,13 @@ const features = [
   },
 ];
 
-const Features05Page = () => {
+interface Features05Props {
+  description?: string;
+}
+
+const Features05Page = ({
+  description = "Traditional forms are rigid. If a user gives a fascinating answer to question #3, Typeform just moves to question #4. You miss the \"Why.\" The Evallo Difference? Our AI listens. It asks the follow-up question you would have asked if you were there in person."
+}: Features05Props) => {
   return (
     <div className="min-h-screen flex items-center justify-center w-full">
       <div className="max-w-(--breakpoint-lg) w-full py-10 px-6">
@@ -55,7 +61,7 @@ const Features05Page = () => {
           From Data Points to &quot;Aha!&quot; Moments.
         </h2>
         <p className="mt-2 text-muted-foreground text-lg sm:text-xl">
-          Traditional forms are rigid. If a user gives a fascinating answer to question #3, Typeform just moves to question #4. You miss the &quot;Why.&quot; The Evallo Difference? Our AI listens. It asks the follow-up question you would have asked if you were there in person.
+          {description}
         </p>
         <div className="mt-10 w-full mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-8">
           {features.map((feature) => (

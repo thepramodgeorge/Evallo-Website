@@ -11,6 +11,14 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: '5jw1znnm2c.ufs.sh',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.pcmag.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'upload.wikimedia.org',
+      },
     ],
   },
 };

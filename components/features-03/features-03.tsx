@@ -2,7 +2,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Blocks, Settings2 } from "lucide-react";
 import Image from "next/image";
 
-const Features03 = () => {
+interface Features03Props {
+  logicTreeText?: string;
+  media1Src?: string;
+}
+
+const Features03 = ({
+  logicTreeText = "Building a 20-path logic tree in Typeform is a nightmare.",
+  media1Src = "https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSVOfklZ4u3fFn6TyYLzhtDqJ8GerAS2QsWb41"
+}: Features03Props) => {
   return (
     <div className="min-h-screen flex items-center justify-center w-full">
       <div className="w-full max-w-(--breakpoint-lg) mx-auto py-12 px-6">
@@ -18,7 +26,7 @@ const Features03 = () => {
             {/* Media 1 Mobile */}
             <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl overflow-hidden relative">
               <Image
-                src="https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSVOfklZ4u3fFn6TyYLzhtDqJ8GerAS2QsWb41"
+                src={media1Src}
                 alt="Evallo AI survey builder interface showing simple drag-and-drop survey creation"
                 fill
                 className="object-cover rounded-xl"
@@ -34,7 +42,7 @@ const Features03 = () => {
                 <div className="flex items-start gap-3">
                   <Settings2 className="shrink-0" />
                   <p className="-mt-0.5">
-                    Building a 20-path logic tree in Typeform is a nightmare.
+                    {logicTreeText}
                   </p>
                 </div>
               </li>
@@ -55,7 +63,7 @@ const Features03 = () => {
           {/* Media 1 Desktop */}
           <div className="hidden md:block bg-muted rounded-xl col-span-1 md:col-span-3 lg:col-span-2 overflow-hidden relative">
             <Image
-              src="https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSVOfklZ4u3fFn6TyYLzhtDqJ8GerAS2QsWb41"
+              src={media1Src}
               alt="Evallo AI survey builder interface showing simple drag-and-drop survey creation"
               fill
               className="object-cover rounded-xl"

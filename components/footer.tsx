@@ -104,6 +104,10 @@ const footerSections = [
         title: "vs Typeform",
         href: "/vs-typeform",
       },
+      {
+        title: "vs SurveyMonkey",
+        href: "/vs-surveymonkey",
+      },
     ],
   },
 ];
