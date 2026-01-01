@@ -50,16 +50,24 @@ const faq = [
   },
 ];
 
-const FAQ07 = () => {
+interface FAQ07Props {
+  items?: { question: string; answer: string }[];
+  title?: string;
+  description?: string;
+}
+
+const FAQ07 = ({ items, title, description }: FAQ07Props) => {
   const [dialogOpen, setDialogOpen] = useState(false);
+  const displayFaq = items || faq;
+
   return (
     <section className="flex items-center justify-center py-12 px-6">
       <div className="max-w-2xl w-full mx-auto py-8">
         <h2 className="text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em] text-center">
-          Frequently Asked Questions
+          {title || "Frequently Asked Questions"}
         </h2>
         <p className="mt-2 text-xl text-muted-foreground text-center">
-          Answers about how Evallo works, integrations, setup and results.
+          {description || "Answers about how Evallo works, integrations, setup and results."}
         </p>
 
         <Accordion
@@ -68,7 +76,7 @@ const FAQ07 = () => {
           className="mt-8 sm:mt-10 space-y-4"
           defaultValue="question-0"
         >
-          {faq.map(({ question, answer }, index) => (
+          {displayFaq.map(({ question, answer }, index) => (
             <AccordionItem
               key={question}
               value={`question-${index}`}

@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+import { headers } from "next/headers";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import Hero from "@/components/hero";
 import TestimonialBanner from "@/components/testimonial-banner";
@@ -7,7 +9,22 @@ import Features05Page from "@/components/features-05/features-05";
 import Features03 from "@/components/features-03/features-03";
 import Pricing03 from "@/app/pricing/page";
 import HowItWorksSection from "@/components/features-02/features-02";
+import FAQ07 from "@/components/faq-07";
 import Footer from "@/components/footer";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const headersList = await headers();
+  const host = headersList.get('host') || 'evallo.app';
+  const protocol = host.includes('localhost') ? 'http' : 'https';
+
+  return {
+    title: "Evallo vs Typeform | The AI-Powered Alternative",
+    description: "Compare Evallo and Typeform. See why Evallo's AI-driven surveys are the better choice for modern data collection.",
+    alternates: {
+      canonical: `${protocol}://${host}/vs-typeform`,
+    },
+  };
+}
 
 export default function VsTypeformPage() {
   return (
@@ -90,37 +107,50 @@ function FAQSection() {
   const faqData = [
     {
       question: "Is Evallo a better alternative to Typeform for UX Research?",
-      answer: "Yes, because of adaptive probing.",
+      answer: "Absolutely. Unlike Typeform's static paths, Evallo uses AI to perform 'adaptive probing'—asking intelligent follow-up questions based on user responses to uncover deeper insights automatically.",
+    },
+    {
+      question: "Does Evallo support conditional logic like Typeform?",
+      answer: "Yes, but with a major upgrade. Instead of you manually building complex 'If/Then' branching logic, our AI generates the logic dynamically based on your research goals.",
+    },
+    {
+      question: "Is Evallo cheaper than Typeform?",
+      answer: "Yes! While Typeform charges a recurring monthly subscription that gets expensive as you scale, Evallo currently offers a Lifetime Deal. Pay once, own it forever, and save thousands in the long run.",
     },
     {
       question: "Can I import my leads from Evallo to my CRM?",
-      answer: "Yes, we integrate with [X, Y, Z].",
+      answer: "Yes, Evallo integrates seamlessly with popular CRMs and tools like HubSpot, Salesforce, and Zapier, ensuring your survey data flows directly into your existing workflow.",
     },
     {
       question: "How long does it take to set up an AI flow?",
-      answer: "Under 2 minutes.",
+      answer: "Under 2 minutes. You simply describe your research goal in plain English, and our AI builds the entire conversational flow for you instantly.",
     },
   ];
 
-  return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-12">
-      <div className="w-full max-w-2xl">
-        <h2 className="text-4xl leading-[1.15]! font-semibold tracking-[-0.03em]">
-          Frequently Asked Questions
-        </h2>
-        <p className="mt-2 text-xl text-muted-foreground">
-          Quick answers to common questions about Evallo vs Typeform.
-        </p>
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
+  };
 
-        <div className="mt-8 sm:mt-10 space-y-4">
-          {faqData.map((item, index) => (
-            <div key={index} className="bg-accent py-4 px-4 rounded-xl">
-              <h3 className="text-lg font-semibold">{item.question}</h3>
-              <p className="mt-2 text-base text-muted-foreground">{item.answer}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <FAQ07 
+        items={faqData} 
+        title="Frequently Asked Questions" 
+        description="Quick answers to common questions about Evallo vs Typeform."
+      />
+    </>
   );
 }
