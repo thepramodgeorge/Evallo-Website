@@ -66,7 +66,7 @@ const Features06Page = () => {
               key={feature.category}
               className="flex flex-col md:flex-row items-center gap-x-12 gap-y-6 md:even:flex-row-reverse"
             >
-              <div className="w-full aspect-[4/3] bg-muted rounded-xl border border-border/50 basis-1/2">
+              <div className="w-full aspect-[4/3] bg-muted rounded-xl border border-border/50 basis-1/2 relative">
                 {feature.imageUrl && (
                   <Image
                     src={feature.imageUrl}
