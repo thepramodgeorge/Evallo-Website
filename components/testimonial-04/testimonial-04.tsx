@@ -10,8 +10,8 @@ const testimonials = [
     designation: "Head of Research",
     company: "Brightlane",
     testimonial:
-      "Since switching to Evallo, our survey response rates jumped from 15% to 45%. The AI-powered questions adapt to respondents, giving us much richer data than SurveyMonkey ever did.",
-    avatar: "https://randomuser.me/api/portraits/men/1.jpg",
+      "Since switching to Evallo, our survey response rates jumped from 15% to 45%. The AI-powered questions adapt to respondents, giving us much richer data than SurveyMonkey or Typeform ever did.",
+    avatar: "/James_Anderson_Head_of_Research.webp",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const testimonials = [
     designation: "Head of Product Research",
     company: "Greenloop",
     testimonial:
-      "We replaced SurveyMonkey with Evallo and our completion rates doubled. The conversational format feels more natural, and respondents provide more detailed feedback.",
+      "We replaced SurveyMonkey and Typeform with Evallo and our completion rates doubled. The conversational format feels more natural, and respondents provide more detailed feedback.",
     avatar: "https://randomuser.me/api/portraits/women/3.jpg",
   },
   {
@@ -82,7 +82,7 @@ const testimonials = [
     designation: "Director of User Research",
     company: "Leadcraft",
     testimonial:
-      "SurveyMonkey couldn't handle our complex branching logic, but Evallo's AI makes it effortless. We've eliminated response bias and gotten more honest feedback.",
+      "SurveyMonkey and Typeform couldn't handle our complex branching logic, but Evallo's AI makes it effortless. We've eliminated response bias and gotten more honest feedback.",
     avatar: "https://randomuser.me/api/portraits/women/30.jpg",
   },
   {
