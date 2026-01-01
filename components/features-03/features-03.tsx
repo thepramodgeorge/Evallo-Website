@@ -19,7 +19,7 @@ const Features03 = () => {
             <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl overflow-hidden relative">
               <Image
                 src="https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSVOfklZ4u3fFn6TyYLzhtDqJ8GerAS2QsWb41"
-                alt="Survey creation interface"
+                alt="Evallo AI survey builder interface showing simple drag-and-drop survey creation"
                 fill
                 className="object-cover rounded-xl"
               />
@@ -56,7 +56,7 @@ const Features03 = () => {
           <div className="hidden md:block bg-muted rounded-xl col-span-1 md:col-span-3 lg:col-span-2 overflow-hidden relative">
             <Image
               src="https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSVOfklZ4u3fFn6TyYLzhtDqJ8GerAS2QsWb41"
-              alt="Survey creation interface"
+              alt="Evallo AI survey builder interface showing simple drag-and-drop survey creation"
               fill
               className="object-cover rounded-xl"
             />
@@ -66,7 +66,7 @@ const Features03 = () => {
           <div className="hidden md:block bg-muted rounded-xl col-span-1 md:col-span-3 lg:col-span-2 overflow-hidden relative">
             <Image
               src="https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSJvaG613pvGFhHrj4KeqZLtCWSwkfliNJAUEb"
-              alt="Survey planning interface"
+              alt="Evallo survey planning dashboard with AI-powered question generation and flow optimization"
               fill
               className="object-cover rounded-xl"
             />
@@ -78,7 +78,7 @@ const Features03 = () => {
             <div className="md:hidden mb-6 aspect-video w-full bg-background rounded-xl overflow-hidden relative">
               <Image
                 src="https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSJvaG613pvGFhHrj4KeqZLtCWSwkfliNJAUEb"
-                alt="Survey planning interface"
+                alt="Evallo survey planning dashboard with AI-powered question generation and flow optimization"
                 fill
                 className="object-cover rounded-xl"
               />

@@ -61,8 +61,8 @@ const Features04Page = () => {
           {/* Media */}
           <div className="hidden md:flex w-full relative overflow-hidden self-stretch items-center justify-center bg-muted">
             <Image
-              src="/convoluted%20survey.webp"
-              alt="Complex survey logic whiteboard"
+              src="/typeform-logic-tree-complexity.webp"
+              alt="Comparison between complex Typeform logic trees and simple Evallo AI flows"
               width={1600}
               height={1000}
               style={{ height: '100%', width: 'auto' }}
