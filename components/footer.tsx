@@ -14,28 +14,12 @@ const footerSections = [
     title: "Product",
     links: [
       {
-        title: "Features",
-        href: "#features",
-      },
-      {
         title: "Pricing",
         href: "/pricing",
       },
       {
-        title: "Templates",
-        href: "#",
-      },
-      {
-        title: "Integrations",
-        href: "#",
-      },
-      {
-        title: "API",
-        href: "#",
-      },
-      {
-        title: "Security",
-        href: "#",
+        title: "How it works",
+        href: "/#how-it-works",
       },
     ],
   },
@@ -46,54 +30,14 @@ const footerSections = [
         title: "Blog",
         href: "/blog",
       },
-      {
-        title: "Help Center",
-        href: "#",
-      },
-      {
-        title: "Community",
-        href: "#",
-      },
-      {
-        title: "Tutorials",
-        href: "#",
-      },
-      {
-        title: "Case Studies",
-        href: "#",
-      },
-      {
-        title: "Webinars",
-        href: "#",
-      },
     ],
   },
   {
     title: "Company",
     links: [
       {
-        title: "About",
-        href: "#",
-      },
-      {
-        title: "Careers",
-        href: "#",
-      },
-      {
-        title: "Contact",
-        href: "#",
-      },
-      {
-        title: "Press",
-        href: "#",
-      },
-      {
-        title: "Partners",
-        href: "#",
-      },
-      {
-        title: "Legal",
-        href: "#",
+        title: "About Us",
+        href: "/about-us",
       },
     ],
   },
