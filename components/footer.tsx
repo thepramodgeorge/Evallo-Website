@@ -97,6 +97,15 @@ const footerSections = [
       },
     ],
   },
+  {
+    title: "Compare",
+    links: [
+      {
+        title: "vs Typeform",
+        href: "/vs-typeform",
+      },
+    ],
+  },
 ];
 
 const Footer = () => {
