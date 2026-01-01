@@ -29,7 +29,7 @@ export default function Hero() {
             </Button>
           </div>
         </div>
-        <div className="w-full aspect-video lg:aspect-auto lg:w-full lg:h-screen rounded-xl lg:rounded-none overflow-hidden bg-white">
+        <div className="relative w-full aspect-video lg:aspect-auto lg:w-full lg:h-screen rounded-xl lg:rounded-none overflow-hidden bg-white">
           <Image
             src="/Pramod%20George%20Hero%20section%20WEBSITE%20IMAGE.webp"
             alt="Pramod George Hero Image"
