@@ -10,6 +10,8 @@ type TestimonialBannerProps = {
   role?: string;
   avatarSrc?: string;
   className?: string;
+  cardClassName?: string;
+  contentClassName?: string;
 };
 
 const TestimonialBanner: React.FC<TestimonialBannerProps> = ({
@@ -18,13 +20,18 @@ const TestimonialBanner: React.FC<TestimonialBannerProps> = ({
   role = "Head of Growth, Brightlane",
   avatarSrc = "https://5jw1znnm2c.ufs.sh/f/0HPmnuCEv8pSHe860sMuxDatYrVP0L2B6GIQUiJmEjC8FRZk",
   className = "",
+  cardClassName,
+  contentClassName = "",
 }) => {
+  const defaultCardClasses = "w-full bg-muted text-foreground border-0 shadow-none dark:bg-foreground dark:text-muted-foreground";
+  const cardClasses = cardClassName ?? defaultCardClasses;
+
   return (
     <section className={`flex items-center justify-center py-12 px-6 ${className}`}>
       <div className="max-w-(--breakpoint-lg) w-full mx-auto py-4">
-        <Card className="w-full bg-muted text-foreground border-0 shadow-none dark:bg-foreground dark:text-muted-foreground">
-          <CardContent className="space-y-6 text-left md:px-24 md:py-16">
-            <blockquote className="text-xl sm:text-3xl font-semibold text-pretty text-left dark:text-foreground">
+        <Card className={cardClasses}>
+          <CardContent className={`space-y-6 text-left md:px-24 md:py-16 ${contentClassName}`}>
+            <blockquote className={`text-xl sm:text-3xl font-semibold text-pretty text-left ${contentClassName}`}>
               {quote}
             </blockquote>
 
