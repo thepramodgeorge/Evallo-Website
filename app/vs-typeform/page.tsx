@@ -61,14 +61,15 @@ function ComparisonTableSection() {
         <h2 className="text-4xl md:text-5xl font-semibold text-center tracking-tight mb-12">
           Evallo vs. Typeform: At a Glance
         </h2>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead className="w-1/3">Feature</TableHead>
-              <TableHead className="w-1/3">Typeform</TableHead>
-              <TableHead className="w-1/3">Evallo.app</TableHead>
-            </TableRow>
-          </TableHeader>
+        <div className="border rounded-lg overflow-hidden">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-muted/50">
+                <TableHead className="w-1/3">Feature</TableHead>
+                <TableHead className="w-1/3">Typeform</TableHead>
+                <TableHead className="w-1/3">Evallo.app</TableHead>
+              </TableRow>
+            </TableHeader>
           <TableBody>
             {comparisonData.map((row, index) => (
               <TableRow key={index}>
@@ -79,6 +80,7 @@ function ComparisonTableSection() {
             ))}
           </TableBody>
         </Table>
+        </div>
       </div>
     </section>
   );
