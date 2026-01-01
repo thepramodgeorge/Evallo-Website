@@ -20,7 +20,7 @@ export default function NavbarWrapper() {
   const items = [
     { name: "Home", link: "/" },
     { name: "About us", link: "/about-us" },
-    { name: "Pricing", link: "/pricing" },
+    { name: "Pricing", link: "/#pricing" },
   ]
 
   return (

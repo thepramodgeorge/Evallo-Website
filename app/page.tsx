@@ -1,18 +1,12 @@
-import Hero from "@/components/hero"
 import Hero02 from "@/components/hero-02/hero-02"
-import Features07 from "@/components/features-07"
 import Pricing03 from "@/app/pricing/page"
 import FAQ07 from "@/components/faq-07"
 import Testimonial04 from "@/components/testimonial-04/testimonial-04"
 import TestimonialBanner from "@/components/testimonial-banner"
-import Footer04Page from "@/components/footer-04/footer-04"
 import Footer from "@/components/footer"
-import { Marquee } from "@/components/ui/marquee"
 import Features04Page from "@/components/features-04/features-04"
-import Features05Page from "@/components/features-05/features-05"
 import Features06Page from "@/components/features-06/features-06"
 import HowItWorksSection from "@/components/features-02/features-02"
-import Image from "next/image"
 
 export default function Home() {
   return (
@@ -28,7 +22,7 @@ export default function Home() {
     <HowItWorksSection id="how-it-works" />
     <Testimonial04 />
     {/*<Features07 />*/}
-  <Pricing03 maxWidthClass="max-w-7xl" />
+  <Pricing03 maxWidthClass="max-w-7xl" id="pricing" />
     <TestimonialBanner 
       quote="We replaced SurveyMonkey with Evallo. Our survey completion rates increased by 40%, and we get richer insights from every response."
       author="Sarah L"

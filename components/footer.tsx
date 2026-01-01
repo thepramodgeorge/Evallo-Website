@@ -15,11 +15,15 @@ const footerSections = [
     links: [
       {
         title: "Pricing",
-        href: "/pricing",
+        href: "/#pricing",
       },
       {
         title: "How it works",
         href: "/#how-it-works",
+      },
+      {
+        title: "Industries",
+        href: "/#industries",
       },
     ],
   },

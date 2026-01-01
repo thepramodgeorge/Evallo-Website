@@ -61,12 +61,12 @@ const plans = [
   },
 ];
 
-const Pricing03 = ({ maxWidthClass = "max-w-(--breakpoint-lg)" }: { maxWidthClass?: string }) => {
+const Pricing03 = ({ maxWidthClass = "max-w-(--breakpoint-lg)", id }: { maxWidthClass?: string; id?: string }) => {
   const [selectedBillingPeriod, setSelectedBillingPeriod] = useState("monthly");
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
-    <section className="flex flex-col items-center justify-center py-12 px-6">
+    <section id={id} className="flex flex-col items-center justify-center py-12 px-6">
       <h2 className="text-4xl md:text-5xl md:leading-14 font-semibold tracking-[-0.03em] text-center">
         Pricing
       </h2>
