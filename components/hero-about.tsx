@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
 
@@ -10,10 +11,10 @@ export default function Hero() {
             About us
           </h1>
           <p className="mt-6 max-w-[60ch] text-lg text-foreground/80">
-            In 2024, Pramod George, Evallo's Founder built Evallo after realizing survey tools made research harder than it needed to be. Instead of forcing teams to design complex logic flows, you describe what you want to learn, and Evallo runs disciplined customer conversations that produce high-quality survey data you can trust.
+            In 2024, Pramod George, Evallo&apos;s Founder built Evallo after realizing survey tools made research harder than it needed to be. Instead of forcing teams to design complex logic flows, you describe what you want to learn, and Evallo runs disciplined customer conversations that produce high-quality survey data you can trust.
           </p>
           <p className="mt-4 max-w-[60ch] text-lg text-foreground/80">
-            Join us in our journey to build the world's most convinient and intelligent survey platform.
+            Join us in our journey to build the world&apos;s most convinient and intelligent survey platform.
           </p>
           <div className="mt-12 flex items-center gap-4">
             <Button size="lg" className="rounded-full text-base">
@@ -29,10 +30,11 @@ export default function Hero() {
           </div>
         </div>
         <div className="w-full aspect-video lg:aspect-auto lg:w-full lg:h-screen rounded-xl lg:rounded-none overflow-hidden bg-white">
-          <img
+          <Image
             src="/Pramod%20George%20Hero%20section%20WEBSITE%20IMAGE.webp"
             alt="Pramod George Hero Image"
-            className="w-full h-full object-contain object-center lg:object-center rounded-xl lg:rounded-none"
+            fill
+            className="object-contain object-center lg:object-center rounded-xl lg:rounded-none"
           />
         </div>
       </div>

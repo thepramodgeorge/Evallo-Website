@@ -1,7 +1,9 @@
+import Image from "next/image";
+
 const LOGO_SIZE = 128;
 
 export const Logo01 = () => (
-  <img
+  <Image
     src="https://www.logggos.club/logos/tailwind.svg"
     alt="Tailwind CSS"
     width={LOGO_SIZE}
@@ -11,7 +13,7 @@ export const Logo01 = () => (
 );
 
 export const Logo02 = () => (
-  <img
+  <Image
     src="https://www.logggos.club/logos/plaid.svg"
     alt="Plaid"
     width={LOGO_SIZE}
@@ -21,7 +23,7 @@ export const Logo02 = () => (
 );
 
 export const Logo03 = () => (
-  <img
+  <Image
     src="https://www.logggos.club/logos/glantus.svg"
     alt="Glantus"
     width={LOGO_SIZE}
@@ -31,7 +33,7 @@ export const Logo03 = () => (
 );
 
 export const Logo04 = () => (
-  <img
+  <Image
     src="https://www.logggos.club/logos/remind.svg"
     alt="Remind"
     width={LOGO_SIZE}
@@ -41,7 +43,7 @@ export const Logo04 = () => (
 );
 
 export const Logo05 = () => (
-  <img
+  <Image
     src="https://www.logggos.club/logos/handshake.svg"
     alt="Handshake"
     width={LOGO_SIZE}
@@ -51,7 +53,7 @@ export const Logo05 = () => (
 );
 
 export const Logo06 = () => (
-  <img
+  <Image
     src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/Godrej_Logo.svg/1280px-Godrej_Logo.svg.png"
     alt="Godrej"
     width={LOGO_SIZE}

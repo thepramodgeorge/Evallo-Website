@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, CirclePlay } from "lucide-react";
@@ -61,9 +62,11 @@ const Hero02 = () => {
               </Button>
             </div>
           </div>
-          <img
+          <Image
             src="/Evallo-Hero-Image-1-1024x1024.webp"
             alt="Evallo hero"
+            width={1024}
+            height={1024}
             className="w-full h-auto block relative z-10"
           />
         </div>

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -67,10 +68,11 @@ const Features06Page = () => {
             >
               <div className="w-full aspect-[4/3] bg-muted rounded-xl border border-border/50 basis-1/2">
                 {feature.imageUrl && (
-                  <img
+                  <Image
                     src={feature.imageUrl}
                     alt={feature.title}
-                    className="w-full h-full object-cover rounded-xl"
+                    fill
+                    className="object-cover rounded-xl"
                   />
                 )}
               </div>
