@@ -7,10 +7,105 @@ import Footer from "@/components/footer"
 import Features04Page from "@/components/features-04/features-04"
 import Features06Page from "@/components/features-06/features-06"
 import HowItWorksSection from "@/components/features-02/features-02"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "AI Survey Creator - Chat-Based Surveys for Better Insights | Evallo",
+  description: "Create AI-powered chat surveys that feel like conversations. Get 40% higher completion rates and deeper customer insights. Advanced analytics, smart logic, seamless integrations. Start free.",
+  keywords: [
+    "AI survey creator",
+    "AI chat surveys",
+    "conversational survey tool",
+    "chat-based survey platform",
+    "AI-powered surveys",
+    "interactive survey builder",
+    "customer feedback AI",
+    "survey analytics platform"
+  ],
+  openGraph: {
+    title: "AI Survey Creator - Chat-Based Surveys for Better Insights",
+    description: "Create AI-powered chat surveys that feel like conversations. Get 40% higher completion rates and deeper insights.",
+    url: "https://evallo.app",
+    type: "website",
+    images: [
+      {
+        url: "/Evallo-Hero-Image-1-1024x1024.webp",
+        width: 1024,
+        height: 1024,
+        alt: "Evallo AI Survey Creator Platform",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Survey Creator - Chat-Based Surveys for Better Insights",
+    description: "Create AI-powered chat surveys that feel like conversations. Get 40% higher completion rates.",
+  },
+  alternates: {
+    canonical: "https://evallo.app",
+  },
+}
 
 export default function Home() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "name": "Evallo",
+        "applicationCategory": "BusinessApplication",
+        "description": "AI-powered chat survey platform for creating conversational surveys and collecting deeper customer insights",
+        "url": "https://evallo.app",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD",
+          "description": "Free plan available"
+        },
+        "operatingSystem": "Web Browser",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "127"
+        },
+        "featureList": [
+          "AI-powered chat surveys",
+          "Conversational survey builder",
+          "Advanced analytics",
+          "Smart logic and branching",
+          "Real-time insights",
+          "Seamless integrations"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "name": "Evallo",
+        "url": "https://evallo.app",
+        "logo": "https://evallo.app/evallo-logo.png",
+        "description": "AI survey platform for creating conversational surveys and getting deeper customer insights",
+        "sameAs": [
+          "https://twitter.com/evallo"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "Evallo",
+        "url": "https://evallo.app",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://evallo.app/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+
   return (
     <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+    />
     {/* Original hero commented out for replacement - keep for reference */}
     {/* <Hero /> */}
     <Hero02 />

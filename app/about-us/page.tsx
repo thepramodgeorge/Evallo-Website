@@ -4,8 +4,30 @@ import Footer from "@/components/footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Why We Built Evallo — The SurveyMonkey/ Typeform Alternative",
-  description: "We built Evallo after realizing survey tools made research harder than it needed to be. Instead of forcing teams to design complex logic flows, you describe what you want to learn — and Evallo runs disciplined customer conversations that produce high-quality survey data you can trust.",
+  title: "About Evallo - Why We Built the AI Chat Survey Platform",
+  description: "We built Evallo after realizing survey tools made research harder than it needed to be. Our AI chat surveys run disciplined customer conversations that produce high-quality data you can trust. The better alternative to SurveyMonkey and Typeform.",
+  keywords: [
+    "about Evallo",
+    "AI survey company",
+    "chat survey platform",
+    "survey tool alternative",
+    "conversational AI surveys",
+    "customer research platform"
+  ],
+  openGraph: {
+    title: "About Evallo - Why We Built the AI Chat Survey Platform",
+    description: "We built Evallo to make customer research easier. Our AI chat surveys produce high-quality data you can trust.",
+    url: "https://evallo.app/about-us",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Evallo - Why We Built the AI Chat Survey Platform",
+    description: "We built Evallo to make customer research easier. AI chat surveys that produce high-quality data.",
+  },
+  alternates: {
+    canonical: "https://evallo.app/about-us",
+  },
 };
 
 export default function AboutUsPage() {

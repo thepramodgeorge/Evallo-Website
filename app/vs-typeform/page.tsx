@@ -18,8 +18,36 @@ export async function generateMetadata(): Promise<Metadata> {
   const protocol = host.includes('localhost') ? 'http' : 'https';
 
   return {
-    title: "Evallo vs Typeform | The AI-Powered Alternative",
-    description: "Compare Evallo and Typeform. See why Evallo's AI-driven surveys are the better choice for modern data collection.",
+    title: "Evallo vs Typeform - Best AI Survey Alternative 2026 | Comparison",
+    description: "Typeform alternative with AI-powered chat surveys. Get 40% higher completion rates, deeper insights, and smarter analytics. See why teams switch from Typeform to Evallo's conversational surveys.",
+    keywords: [
+      "Typeform alternative",
+      "Evallo vs Typeform",
+      "AI survey vs Typeform",
+      "better than Typeform",
+      "Typeform competitor",
+      "conversational survey Typeform",
+      "AI chat survey alternative"
+    ],
+    openGraph: {
+      title: "Evallo vs Typeform - Best AI Survey Alternative 2026",
+      description: "Get 40% higher completion rates with AI-powered chat surveys. See why teams switch from Typeform to Evallo.",
+      url: `${protocol}://${host}/vs-typeform`,
+      type: "article",
+      images: [
+        {
+          url: "/typeform-logic-tree-complexity.webp",
+          width: 1200,
+          height: 630,
+          alt: "Evallo vs Typeform Comparison",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Evallo vs Typeform - Best AI Survey Alternative 2026",
+      description: "Get 40% higher completion rates with AI-powered chat surveys. See the comparison.",
+    },
     alternates: {
       canonical: `${protocol}://${host}/vs-typeform`,
     },

@@ -14,9 +14,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Evallo - AI-Powered Survey Platform | Better Than Typeform",
-  description: "Create intelligent surveys with AI-powered logic, advanced analytics, and seamless integrations. Get deeper insights from your audience with Evallo's next-generation survey platform.",
-  keywords: ["survey platform", "AI surveys", "form builder", "Typeform alternative", "survey analytics", "customer feedback", "market research"],
+  title: "AI Chat Surveys - Get Deeper Customer Insights | Evallo",
+  description: "Transform surveys into AI-powered conversations. Get 40% higher completion rates with chat-based surveys. Advanced analytics, seamless integrations. Better than traditional forms.",
+  keywords: [
+    "AI chat surveys",
+    "AI survey creator",
+    "conversational surveys",
+    "chat-based surveys",
+    "AI survey builder",
+    "survey platform",
+    "AI-powered surveys",
+    "conversational forms",
+    "customer feedback tool",
+    "Typeform alternative",
+    "Qualtrics alternative",
+    "SurveyMonkey alternative",
+    "survey analytics",
+    "AI form builder",
+    "interactive surveys",
+    "customer insights platform"
+  ],
   authors: [{ name: "Evallo Team" }],
   creator: "Evallo",
   publisher: "Evallo",
@@ -30,8 +47,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Evallo - AI-Powered Survey Platform",
-    description: "Create intelligent surveys with AI-powered logic and advanced analytics. The modern alternative to Typeform.",
+    title: "AI Chat Surveys - Get Deeper Customer Insights | Evallo",
+    description: "Transform surveys into AI-powered conversations. Get 40% higher completion rates with chat-based surveys and advanced analytics.",
     url: "https://evallo.app",
     siteName: "Evallo",
     images: [
@@ -39,7 +56,7 @@ export const metadata: Metadata = {
         url: "/Evallo-Hero-Image-1-1024x1024.webp",
         width: 1024,
         height: 1024,
-        alt: "Evallo - AI-Powered Survey Platform",
+        alt: "Evallo - AI Chat Survey Platform for Better Customer Insights",
       },
     ],
     locale: "en_US",
@@ -47,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Evallo - AI-Powered Survey Platform",
-    description: "Create intelligent surveys with AI-powered logic and advanced analytics.",
+    title: "AI Chat Surveys - Get Deeper Customer Insights | Evallo",
+    description: "Transform surveys into AI-powered conversations. Get 40% higher completion rates with chat-based surveys and advanced analytics.",
     images: ["/Evallo-Hero-Image-1-1024x1024.webp"],
     creator: "@evallo",
   },
