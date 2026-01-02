@@ -7,7 +7,7 @@ import Features04Page from "@/components/features-04/features-04";
 import Testimonial04 from "@/components/testimonial-04/testimonial-04";
 import Features05Page from "@/components/features-05/features-05";
 import Features03 from "@/components/features-03/features-03";
-import Pricing03 from "@/app/pricing/page";
+import Pricing03 from "@/components/pricing/pricing-03";
 import HowItWorksSection from "@/components/features-02/features-02";
 import FAQ07 from "@/components/faq-07";
 import Footer from "@/components/footer";

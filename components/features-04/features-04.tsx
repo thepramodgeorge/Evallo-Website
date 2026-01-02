@@ -77,7 +77,9 @@ const Features04Page = ({
               height={1000}
               style={{ height: '100%', width: 'auto' }}
               className="rounded-xl"
-              priority={false}
+              loading="lazy"
+              quality={85}
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
           </div>
         </div>

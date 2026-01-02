@@ -64,10 +64,13 @@ const Hero02 = () => {
           </div>
           <Image
             src="/Evallo-Hero-Image-1-1024x1024.webp"
-            alt="Evallo hero"
+            alt="Evallo AI-powered chat survey platform dashboard showing conversational survey interface"
             width={1024}
             height={1024}
+            priority
+            quality={90}
             className="w-full h-auto block relative z-10"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         </div>
         <div className="py-8">

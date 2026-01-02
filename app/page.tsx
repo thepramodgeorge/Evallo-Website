@@ -1,13 +1,18 @@
 import Hero02 from "@/components/hero-02/hero-02"
-import Pricing03 from "@/app/pricing/page"
-import FAQ07 from "@/components/faq-07"
-import Testimonial04 from "@/components/testimonial-04/testimonial-04"
 import TestimonialBanner from "@/components/testimonial-banner"
-import Footer from "@/components/footer"
 import Features04Page from "@/components/features-04/features-04"
-import Features06Page from "@/components/features-06/features-06"
-import HowItWorksSection from "@/components/features-02/features-02"
+import Pricing03 from "@/components/pricing/pricing-03"
 import { Metadata } from "next"
+import dynamic from "next/dynamic"
+
+// Dynamic imports for below-fold components to reduce initial bundle
+const FAQ07 = dynamic(() => import("@/components/faq-07"), {
+  loading: () => <div className="min-h-[400px] flex items-center justify-center">Loading FAQ...</div>,
+})
+const Testimonial04 = dynamic(() => import("@/components/testimonial-04/testimonial-04"))
+const Footer = dynamic(() => import("@/components/footer"))
+const Features06Page = dynamic(() => import("@/components/features-06/features-06"))
+const HowItWorksSection = dynamic(() => import("@/components/features-02/features-02"))
 
 export const metadata: Metadata = {
   title: "AI Survey Creator - Chat-Based Surveys for Better Insights | Evallo",
