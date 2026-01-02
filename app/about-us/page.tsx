@@ -31,11 +31,48 @@ export const metadata: Metadata = {
 };
 
 export default function AboutUsPage() {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Evallo",
+    "url": "https://evallo.app",
+    "logo": "https://evallo.app/evallo-logo.png",
+    "description": "AI-powered chat survey platform for creating conversational surveys and collecting deeper customer insights. Founded in 2024 by Pramod George.",
+    "founder": {
+      "@type": "Person",
+      "name": "Pramod George",
+      "jobTitle": "Founder"
+    },
+    "foundingDate": "2024",
+    "sameAs": [
+      "https://twitter.com/evallo",
+      "https://linkedin.com/company/evallo",
+      "https://discord.gg/K32YGWADZW"
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "url": "https://evallo.app"
+    },
+    "areaServed": "Worldwide",
+    "knowsAbout": [
+      "AI Surveys",
+      "Conversational Forms",
+      "Customer Research",
+      "User Feedback",
+      "Market Research"
+    ]
+  };
+
   return (
     <main>
-  <Hero />
-  <TestimonialBanner className="bg-black" cardClassName="w-full bg-neutral-800 text-white border-0 shadow-none" contentClassName="text-white" />
-  <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+      <Hero />
+      <TestimonialBanner className="bg-black" cardClassName="w-full bg-neutral-800 text-white border-0 shadow-none" contentClassName="text-white" />
+      <Footer />
     </main>
   );
 }

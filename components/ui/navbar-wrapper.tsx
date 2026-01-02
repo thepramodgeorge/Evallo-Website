@@ -33,7 +33,6 @@ export default function NavbarWrapper() {
         <div className="ml-auto hidden lg:block relative z-50">
           <button 
             onClick={() => {
-              console.log('Sign in button clicked');
               setDialogOpen(true);
             }}
             className="px-4 py-2 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors font-medium cursor-pointer relative z-50"
@@ -77,7 +76,6 @@ export default function NavbarWrapper() {
             <div className="w-full pt-2 relative z-50">
               <button
                 onClick={() => {
-                  console.log('Mobile sign in button clicked');
                   setIsOpen(false);
                   setDialogOpen(true);
                 }}

@@ -20,14 +20,48 @@ interface SignInDialogProps {
 export function SignInDialog({ open, onOpenChange }: SignInDialogProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState(""); // Honeypot field
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [error, setError] = useState("");
 
+  // Basic client-side validation
+  const validateForm = (): boolean => {
+    if (!name.trim()) {
+      setError("Please enter your name");
+      return false;
+    }
+    if (name.length > 100) {
+      setError("Name is too long");
+      return false;
+    }
+    if (!email.trim()) {
+      setError("Please enter your email");
+      return false;
+    }
+    // RFC 5322 compliant email regex
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address");
+      return false;
+    }
+    if (email.length > 254) {
+      setError("Email is too long");
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
     setError("");
+    
+    // Client-side validation
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
       const response = await fetch("/api/waitlist", {
@@ -35,24 +69,31 @@ export function SignInDialog({ open, onOpenChange }: SignInDialogProps) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ 
+          name: name.trim(), 
+          email: email.trim().toLowerCase(),
+          website, // Honeypot field - should be empty
+        }),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error("Failed to submit");
+        throw new Error(data.error || "Failed to submit");
       }
 
       setSubmitSuccess(true);
       setName("");
       setEmail("");
+      setWebsite("");
       
       // Close dialog after 2 seconds
       setTimeout(() => {
         onOpenChange(false);
         setSubmitSuccess(false);
       }, 2000);
-    } catch {
-      setError("Something went wrong. Please try again.");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -75,7 +116,7 @@ export function SignInDialog({ open, onOpenChange }: SignInDialogProps) {
             </p>
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+          <form onSubmit={handleSubmit} className="space-y-4 mt-4" noValidate>
             <div className="space-y-2">
               <Label htmlFor="name">Name</Label>
               <Input
@@ -85,6 +126,8 @@ export function SignInDialog({ open, onOpenChange }: SignInDialogProps) {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
+                maxLength={100}
+                autoComplete="name"
               />
             </div>
 
@@ -97,11 +140,30 @@ export function SignInDialog({ open, onOpenChange }: SignInDialogProps) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
+                maxLength={254}
+                autoComplete="email"
+              />
+            </div>
+
+            {/* Honeypot field - hidden from users, visible to bots */}
+            <div 
+              className="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10 overflow-hidden"
+              aria-hidden="true"
+            >
+              <Label htmlFor="website">Website</Label>
+              <Input
+                id="website"
+                type="text"
+                name="website"
+                value={website}
+                onChange={(e) => setWebsite(e.target.value)}
+                tabIndex={-1}
+                autoComplete="off"
               />
             </div>
 
             {error && (
-              <p className="text-sm text-red-600">{error}</p>
+              <p className="text-sm text-red-600" role="alert">{error}</p>
             )}
 
             <Button

@@ -1,10 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import {
-  GithubIcon,
   LinkedinIcon,
   TwitterIcon,
+  MessageCircle,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -98,20 +96,41 @@ const Footer = () => {
               </div>
             ))}
 
-            {/* Subscribe Newsletter */}
+            {/* Subscribe Newsletter - Coming Soon */}
             <div className="col-span-2">
               <h6 className="font-semibold">Stay up to date</h6>
               <p className="mt-2 text-sm text-muted-foreground">
-                Get the latest updates on AI-powered surveys and product features.
+                Follow us on social media for the latest updates on AI-powered surveys and product features.
               </p>
-              <form className="mt-4 flex items-center gap-2">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="grow max-w-64"
-                />
-                <Button>Subscribe</Button>
-              </form>
+              <div className="mt-4 flex items-center gap-4">
+                <Link 
+                  href="https://twitter.com/evallo" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow Evallo on Twitter"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <TwitterIcon className="h-5 w-5" />
+                </Link>
+                <Link 
+                  href="https://linkedin.com/company/evallo" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Follow Evallo on LinkedIn"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <LinkedinIcon className="h-5 w-5" />
+                </Link>
+                <Link 
+                  href="https://discord.gg/K32YGWADZW" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  aria-label="Join Evallo Discord community"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <MessageCircle className="h-5 w-5" />
+                </Link>
+              </div>
             </div>
           </div>
           <Separator />
@@ -119,21 +138,36 @@ const Footer = () => {
             {/* Copyright */}
             <span className="text-muted-foreground">
               &copy; {new Date().getFullYear()}{" "}
-              <Link href="/" target="_blank">
+              <Link href="/">
                 Evallo
               </Link>
               . All rights reserved.
             </span>
 
             <div className="flex items-center gap-5 text-muted-foreground">
-              <Link href="#" target="_blank">
+              <Link 
+                href="https://twitter.com/evallo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Follow Evallo on Twitter"
+              >
                 <TwitterIcon className="h-5 w-5" />
               </Link>
-              <Link href="#" target="_blank">
+              <Link 
+                href="https://linkedin.com/company/evallo" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Follow Evallo on LinkedIn"
+              >
                 <LinkedinIcon className="h-5 w-5" />
               </Link>
-              <Link href="#" target="_blank">
-                <GithubIcon className="h-5 w-5" />
+              <Link 
+                href="https://discord.gg/K32YGWADZW" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="Join Evallo Discord community"
+              >
+                <MessageCircle className="h-5 w-5" />
               </Link>
             </div>
           </div>
