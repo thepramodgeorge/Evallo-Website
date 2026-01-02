@@ -195,8 +195,7 @@ const Testimonial04 = () => (
   </section>
 );
 
-// kept existing TestimonialList for reference (not exported). Cards are rendered inline in the grid above.
-const TestimonialList = () => null;
+// Removed unused TestimonialList (kept inline rendering above)
 
 const TwitterLogo = (props: ComponentProps<"svg">) => (
   <svg

@@ -65,7 +65,6 @@ export function NavUser({
       if (error) throw error
       router.push("/")
     } catch (err) {
-      // eslint-disable-next-line no-console
       console.error("Logout error:", err)
       router.push("/")
     }
@@ -95,12 +94,12 @@ export function NavUser({
 
         if (typeof avatar === "string" && avatar.startsWith("http")) {
           try {
-            const url = new URL(avatar)
-            url.searchParams.set("cb", String(Date.now()))
-            avatar = url.toString()
-          } catch (e) {
-            // ignore invalid URL
-          }
+              const url = new URL(avatar)
+              url.searchParams.set("cb", String(Date.now()))
+              avatar = url.toString()
+            } catch {
+              // ignore invalid URL
+            }
         }
 
         return { name, email, avatar }
@@ -129,7 +128,7 @@ export function NavUser({
           const url = new URL(avatar)
           url.searchParams.set("cb", String(Date.now()))
           avatar = url.toString()
-        } catch (e) {
+        } catch {
           // ignore invalid URL
         }
       }
@@ -151,7 +150,6 @@ export function NavUser({
           setLocalUser(getProfileFrom(userData.user))
         }
       } catch (err) {
-        // eslint-disable-next-line no-console
         console.error("NavUser fetch error:", err)
       }
     }
@@ -186,13 +184,11 @@ export function NavUser({
                     alt={localUser.name}
                     crossOrigin="anonymous"
                     onLoad={() => {
-                      // eslint-disable-next-line no-console
                       console.debug("Avatar image loaded:", localUser.avatar)
                       setImgError(false)
                     }}
                     onError={() => {
                       // If the external avatar fails to load, fall back to initials
-                      // eslint-disable-next-line no-console
                       console.debug("Avatar image failed to load:", localUser.avatar)
                       setImgError(true)
                     }}
@@ -224,12 +220,10 @@ export function NavUser({
                       alt={localUser.name}
                       crossOrigin="anonymous"
                       onLoad={() => {
-                        // eslint-disable-next-line no-console
                         console.debug("Avatar image loaded:", localUser.avatar)
                         setImgError(false)
                       }}
                       onError={() => {
-                        // eslint-disable-next-line no-console
                         console.debug("Avatar image failed to load:", localUser.avatar)
                         setImgError(true)
                       }}

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+// Tabs imports removed as they were unused
 import getSupabaseClient from "@/lib/supabaseClient"
 
 interface SiteHeaderProps {

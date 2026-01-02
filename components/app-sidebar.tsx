@@ -174,7 +174,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             const url = new URL(avatar)
             url.searchParams.set("cb", String(Date.now()))
             avatar = url.toString()
-          } catch (e) {
+          } catch {
             // ignore invalid URL
           }
         }
@@ -213,7 +213,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           const url = new URL(avatar)
           url.searchParams.set("cb", String(Date.now()))
           avatar = url.toString()
-        } catch (e) {
+        } catch {
           // ignore invalid URL
         }
       }
@@ -229,7 +229,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           const u = session.user
           const profile = getProfileFrom(u)
           // Debug: log profile selected for sidebar
-          // eslint-disable-next-line no-console
           console.debug('sidebar session user profile:', profile)
           setUser(profile)
           return
@@ -241,12 +240,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         if (u2) {
           const profile = getProfileFrom(u2)
             // Debug: log profile selected for sidebar
-            // eslint-disable-next-line no-console
             console.debug('sidebar getUser profile:', profile)
           setUser(profile)
         }
       } catch (err) {
-        // eslint-disable-next-line no-console
         console.error('Error fetching session/user for sidebar:', err)
       }
     }

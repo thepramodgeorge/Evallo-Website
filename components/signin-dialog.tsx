@@ -51,7 +51,7 @@ export function SignInDialog({ open, onOpenChange }: SignInDialogProps) {
         onOpenChange(false);
         setSubmitSuccess(false);
       }, 2000);
-    } catch (_err) {
+    } catch {
       setError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);

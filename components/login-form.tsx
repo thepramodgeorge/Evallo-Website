@@ -28,7 +28,6 @@ export function LoginForm({
       })
       if (error) throw error
     } catch (err) {
-      // eslint-disable-next-line no-console
       console.error("Google sign-in error:", err)
       alert("Failed to sign in with Google. Check console for details.")
     }

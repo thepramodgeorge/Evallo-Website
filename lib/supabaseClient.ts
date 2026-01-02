@@ -15,7 +15,7 @@ function makeStubClient() {
       async signOut() {
         return { error: null };
       },
-          onAuthStateChange(_callback: (event: string, session: unknown | null) => void) {
+          onAuthStateChange() {
             // Return an object shaped like the real supabase subscription so unsubscribe is safe.
             const noop = () => {}
             // Optionally, we could invoke the callback with a 'SIGNED_OUT' event, but keep it silent.

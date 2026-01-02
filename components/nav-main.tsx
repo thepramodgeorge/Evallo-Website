@@ -3,7 +3,7 @@
 import * as React from "react"
 import { type Icon } from "@tabler/icons-react"
 import Link from "next/link"
-import { useRouter, usePathname } from "next/navigation"
+import { usePathname } from "next/navigation"
 
 import {
   SidebarGroup,
@@ -31,7 +31,6 @@ export function NavMain({
     icon?: Icon
   }[]
 }) {
-  const router = useRouter()
   const pathname = usePathname()
   const [loadingRoute, setLoadingRoute] = React.useState<string | null>(null)
 
