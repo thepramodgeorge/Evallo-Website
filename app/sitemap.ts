@@ -2,26 +2,6 @@ import { MetadataRoute } from 'next'
 import fs from 'fs'
 import path from 'path'
 
-// Priority mapping for different types of pages
-const priorityMap: Record<string, number> = {
-  '/': 1.0,
-  '/pricing': 0.9,
-  '/about-us': 0.8,
-  '/vs-typeform': 0.8,
-  '/vs-surveymonkey': 0.8,
-  '/blog': 0.7,
-}
-
-// Change frequency mapping
-const changeFreqMap: Record<string, 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never'> = {
-  '/': 'weekly',
-  '/pricing': 'weekly',
-  '/about-us': 'monthly',
-  '/vs-typeform': 'monthly',
-  '/vs-surveymonkey': 'monthly',
-  '/blog': 'weekly',
-}
-
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://evallo.app'
   
@@ -76,7 +56,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     .map((route) => ({
       url: `${baseUrl}${route === '/' ? '' : route}`,
       lastModified: new Date(),
-      priority: priorityMap[route] ?? 0.5,
-      changeFrequency: changeFreqMap[route] ?? 'monthly',
     }))
 }
