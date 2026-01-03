@@ -15,8 +15,8 @@ const Features06Page = dynamic(() => import("@/components/features-06/features-0
 const HowItWorksSection = dynamic(() => import("@/components/features-02/features-02"))
 
 export const metadata: Metadata = {
-  title: "AI Survey Creator - Chat-Based Surveys for Better Insights | Evallo",
-  description: "Create AI-powered chat surveys that feel like conversations. Get 40% higher completion rates and deeper customer insights. Advanced analytics, smart logic, seamless integrations. Start free.",
+  title: "AI Chat Surveys For Deeper Customer Insights | Evallo",
+  description: "Create AI-powered chat surveys that feel like conversations. Get 40% higher completion rates and deeper customer insights. Advanced analytics, smart logic, seamless integrations.",
   keywords: [
     "AI survey creator",
     "AI chat surveys",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "survey analytics platform"
   ],
   openGraph: {
-    title: "AI Survey Creator - Chat-Based Surveys for Better Insights",
+    title: "AI Chat Surveys For Deeper Customer Insights | Evallo",
     description: "Create AI-powered chat surveys that feel like conversations. Get 40% higher completion rates and deeper insights.",
     url: "https://evallo.app",
     type: "website",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Survey Creator - Chat-Based Surveys for Better Insights",
+    title: "AI Chat Surveys For Deeper Customer Insights | Evallo",
     description: "Create AI-powered chat surveys that feel like conversations. Get 40% higher completion rates.",
   },
   alternates: {
