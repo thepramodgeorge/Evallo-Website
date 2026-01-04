@@ -18,7 +18,7 @@ export default function TermsAndConditionsPage() {
             <section>
               <h2 className="text-xl font-semibold mb-3">1. Acceptance of Terms</h2>
               <p>
-                By accessing or using the Evallo website and services ("Service"), you agree to be bound by these Terms and Conditions ("Terms"). If you disagree with any part of the terms, you may not access the Service.
+                By accessing or using the Evallo website and services (&quot;Service&quot;), you agree to be bound by these Terms and Conditions (&quot;Terms&quot;). If you disagree with any part of the terms, you may not access the Service.
               </p>
             </section>
 
@@ -45,7 +45,7 @@ export default function TermsAndConditionsPage() {
             <section>
               <h2 className="text-xl font-semibold mb-3">4. User Content</h2>
               <p>
-                You retain ownership of any content, data, or information you submit to the Service ("User Content"). By submitting User Content, you grant Evallo a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, adapt, publish, and display such content solely for the purpose of providing and improving the Service.
+                You retain ownership of any content, data, or information you submit to the Service (&quot;User Content&quot;). By submitting User Content, you grant Evallo a worldwide, non-exclusive, royalty-free license to use, reproduce, modify, adapt, publish, and display such content solely for the purpose of providing and improving the Service.
               </p>
               <p className="mt-2">
                 You represent and warrant that you have all necessary rights to submit the User Content and that it does not violate any third-party rights or applicable laws.
@@ -59,9 +59,9 @@ export default function TermsAndConditionsPage() {
               <p className="mb-2">You agree not to use the Service:</p>
               <ul className="list-disc pl-6 space-y-1">
                 <li>In any way that violates any applicable national or international law or regulation.</li>
-                <li>To transmit, or procure the sending of, any advertising or promotional material, including any "junk mail," "chain letter," "spam," or any other similar solicitation.</li>
+                <li>To transmit, or procure the sending of, any advertising or promotional material, including any &quot;junk mail,&quot; &quot;chain letter,&quot; &quot;spam,&quot; or any other similar solicitation.</li>
                 <li>To impersonate or attempt to impersonate Evallo, an Evallo employee, another user, or any other person or entity.</li>
-                <li>To engage in any other conduct that restricts or inhibits anyone's use or enjoyment of the Service, or which, as determined by us, may harm Evallo or users of the Service or expose them to liability.</li>
+                <li>To engage in any other conduct that restricts or inhibits anyone&apos;s use or enjoyment of the Service, or which, as determined by us, may harm Evallo or users of the Service or expose them to liability.</li>
               </ul>
             </section>
 
