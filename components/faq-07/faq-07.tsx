@@ -16,7 +16,7 @@ const faq = [
   {
     question: "What is Evallo?",
     answer:
-      "Evallo is a lead engagement, qualification, automation and intelligence platform that turns static forms and surveys into chat-like, conversational experiences. It helps sales and marketing teams understand buyer motivations and surface high-intent leads.",
+      "Evallo helps you create dynamic AI surveys that converse with your audience to uncover the 'why', without the nightmare of complex logic trees or manual setup.",
   },
   {
     question: "How does Evallo improve form completion rates?",
